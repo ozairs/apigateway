@@ -118,7 +118,7 @@ Its still unclear if we are getting the 70/30 split from the logs. Istio release
 11. Login with the username and password that you configured as part of the setup process.
 
 12. Click the Graph link and select the namespace `demo`. Run some traffic so that Kiali can display visualization. After a few seconds, the page will refresh. 
-    ![alt](./images/kiali_console.jpg)
+    ![alt](./images/Kiali_Console.jpg)
 
 13. You can select various filters to view the traffic. Seleect the **Requests percentage** to display percentage requests on each path.
 
