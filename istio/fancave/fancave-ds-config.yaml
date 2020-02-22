@@ -1,0 +1,94 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: fancave-ds-teams-config
+data:
+  datasources.json: |-
+    {
+      "in-memory": {
+        "name": "in-memory",
+        "connector": "memory",
+        "localStorage": ""
+      },
+      "sportsDS": {
+        "connector": "rest",
+        "debug": "false",
+        "operations": [{
+          "template": {
+            "name" : "news",
+            "method": "GET",
+            "url": "https://query.yahooapis.com/v1/yql?q=select title,description,link,encoded from rss where url='http://sports.yahoo.com/{league}/rss.xml'&format=json",
+            "headers": {
+              "accepts": "application/json",
+              "content-type": "application/json",
+              "Authorization" : "Bearer {access_token}"
+
+            },
+            "query": {
+              "args": ""
+            },
+            "timeout" : 10000
+          },
+          "functions": {
+            "getNews": ["league", "access_token"]
+          }
+        },
+        {
+          "template": {
+            "name" : "players",
+            "method": "GET",
+            "url": "https://fantasysports.yahooapis.com/fantasy/v2/games;game_keys={league}/players;player_keys=?format=json",
+            "headers": {
+              "accepts": "application/json",
+              "content-type": "application/json",
+              "Authorization" : "Bearer {access_token}"
+            },
+            "timeout" : 10000
+          },
+          "functions": {
+            "getPlayers": ["league", "access_token"]
+          }
+        },
+        {
+          "template": {
+            "name" : "scores",
+            "method": "GET",
+            "url": "https://query.yahooapis.com/v1/yql?q=select sports-content from pm.sports where league='{league}' and gameDate='{date}'&format=json",
+            "headers": {
+              "accepts": "application/json",
+              "content-type": "application/json",
+              "Authorization" : "Bearer {access_token}"
+
+            },
+            "query": {
+              "args": ""
+            },
+            "timeout" : 10000
+          },
+          "functions": {
+            "getScores": ["league", "date", "access_token"]
+          }
+        },
+        {
+          "template": {
+            "name" : "ysToken",
+            "method": "POST",
+            "url": "https://api.login.yahoo.com/oauth2/get_token",
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded"
+            },
+            "form": {
+              "grant_type": "refresh_token",
+              "refresh_token": "AAWMwlmKSjJTycyM2KPlshwetjns8FgZiZSTkedxvkplGLSy2.JyP07e",
+              "client_id" : "dj0yJmk9d2ZkTk1pQmxKU3B4JmQ9WVdrOVZISnRhSFJYTjJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD01Mg--",
+              "client_secret" : "62e64f68d339eb0989619a5061fa94cb724a38b5",
+              "redirect_uri" : "http://ozairs.localhost.com"
+            },
+            "timeout" : 10000
+          },
+          "functions": {
+            "getToken": []
+          }
+        }]
+      }
+    }

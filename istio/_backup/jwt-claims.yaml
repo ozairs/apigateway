@@ -1,0 +1,14 @@
+apiVersion: config.istio.io/v1alpha2
+kind: rule
+metadata:
+  name: auth-headers
+  namespace: istio-system
+spec:
+  match: source.labels["istio"] == "ingressgateway"
+  actions:
+  - handler: keyval.istio-system
+    instances: [ keyval ]
+  request_header_operations:
+  - name: userid
+    values:
+    - request.auth.claims["sub"]

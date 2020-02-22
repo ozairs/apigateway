@@ -1,0 +1,13 @@
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: Policy
+metadata:
+  name: fancave-jwt
+  namespace: demo
+spec:
+  targets:
+  - name: fancave-teams
+  origins:
+  - jwt:
+      issuer: "ozairs4@example.com"
+      jwksUri: "https://raw.githubusercontent.com/ozairs/apiconnect-2018/master/scripts/crypto/jwk-rs256.json"
+  principalBinding: USE_ORIGIN

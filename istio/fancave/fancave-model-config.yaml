@@ -1,0 +1,34 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: fancave-model-teams-config
+data:
+  model-config.json: |
+    {
+      "_meta": {
+        "sources": [
+          "loopback/common/models",
+          "loopback/server/models",
+          "../common/models",
+          "./models"
+        ],
+        "mixins": [
+          "loopback/common/mixins",
+          "loopback/server/mixins",
+          "../common/mixins",
+          "./mixins"
+        ]
+      },
+      "Team": {
+        "dataSource": "in-memory",
+        "public": true
+      },
+      "Player": {
+        "dataSource": "in-memory",
+        "public": false
+      },
+      "News": {
+        "dataSource": "in-memory",
+        "public": false
+      }
+    }

@@ -1,0 +1,60 @@
+<datapower-configuration version="3">
+    <configuration domain="apiconnect">
+        <!--
+        <GatewayPeering name="apigateway-gateway-peering" 
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope" 
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <LocalAddress>eth0_ipv4_1</LocalAddress>
+            <LocalPort>16380</LocalPort>
+            <MonitorPort>26380</MonitorPort>
+            <EnablePeerGroup>off</EnablePeerGroup>
+            <Priority>100</Priority>
+            <EnableSSL>off</EnableSSL>
+            <PersistenceLocation>local</PersistenceLocation>
+            <LocalDirectory>local:///</LocalDirectory>
+            <LogLevel>internal</LogLevel>
+        </GatewayPeering>
+        -->
+        <APIConnectGatewayService name="default" intrinsic="true" 
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope" 
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <LocalAddress>eth0_ipv4_1</LocalAddress>
+            <LocalPort>3000</LocalPort>
+            <SSLClient class="SSLClientProfile">gwd_client</SSLClient>
+            <SSLServer class="SSLServerProfile">gwd_server</SSLServer>
+            <APIGatewayAddress>eth0_ipv4_1</APIGatewayAddress>
+            <APIGatewayPort>9443</APIGatewayPort>
+            <GatewayPeering class="GatewayPeering">gwd</GatewayPeering>
+            <GatewayPeeringManager class="GatewayPeeringManager">default</GatewayPeeringManager>
+            <V5CompatibilityMode>off</V5CompatibilityMode>
+            <V5CSlmMode>autounicast</V5CSlmMode>
+            <IPUnicast/>
+            <DatabaseMode>off</DatabaseMode>
+            <LogStripNonAscii>off</LogStripNonAscii>
+        </APIConnectGatewayService>
+        <APIApplicationType name="app" 
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope" 
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Title>oauth-api-application</Title>
+            <SupportedOAuthTypes>
+                <ClientType>confidential</ClientType>
+                <GrantType>accessCode</GrantType>
+            </SupportedOAuthTypes>
+            <SupportedOAuthTypes>
+                <ClientType>confidential</ClientType>
+                <GrantType>application</GrantType>
+            </SupportedOAuthTypes>
+            <SupportedOAuthTypes>
+                <ClientType>confidential</ClientType>
+                <GrantType>implicit</GrantType>
+            </SupportedOAuthTypes>
+            <SupportedOAuthTypes>
+                <ClientType>confidential</ClientType>
+                <GrantType>password</GrantType>
+            </SupportedOAuthTypes>
+        </APIApplicationType>
+    </configuration>
+</datapower-configuration>

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: r284938edb5-dynamic-gateway-service-ui
+  namespace: apic
+  labels:
+    app: r284938edb5-dynamic-gateway-service
+  annotations:
+    ingress.kubernetes.io/ssl-passthrough: "true"
+spec:
+  tls:
+    - hosts:
+      - apigateway-ui.ozairs.fyre.ibm.com
+  rules:
+    - host:  apigateway-ui.ozairs.fyre.ibm.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: r284938edb5-dynamic-gateway-service-ingress
+              servicePort: 9090
+    

@@ -1,0 +1,1 @@
+console.error(context.get('request.headers.authorization'));

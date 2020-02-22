@@ -1,0 +1,1990 @@
+<datapower-configuration version="3"><export-details><description>Exported Configuration</description><user>admin</user><domain>apiconnect</domain><comment/><product-id>software</product-id><product>IDG</product><display-product>IDG</display-product><model>IBM DataPower Gateway</model><display-model>IBM DataPower Gateway</display-model><device-name>74714e89f857</device-name><serial-number>0000001</serial-number><firmware-version>IDG.2018.4.1.9</firmware-version><display-firmware-version>IDG.2018.4.1.9</display-firmware-version><firmware-build>315826</firmware-build><delivery-type>LTS</delivery-type><firmware-timestamp>2019/12/09 11:56:19</firmware-timestamp><current-date>2020-02-12</current-date><current-time>17:33:55 EST</current-time><reset-date>2020-02-12</reset-date><reset-time>17:10:32 EST</reset-time><login-message/><custom-ui-file/></export-details><interface-data><interface name="eth0" type="Other" vers="ipv4" ip-addr="172.18.0.6"/></interface-data><configuration domain="apiconnect"><CryptoKey name="tls-server-profile-default_idcred_key" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///tls-server-profile-default_idcred_key.pem</Filename>
+<PasswordAlias>off</PasswordAlias></CryptoKey><CryptoCertificate name="tls-server-profile-default_idcred_cert" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///tls-server-profile-default_idcred_cert.pem</Filename>
+<PasswordAlias>off</PasswordAlias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoIdentCred name="tls-server-profile-default_idcred" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Key class="CryptoKey">tls-server-profile-default_idcred_key</Key>
+<Certificate class="CryptoCertificate">tls-server-profile-default_idcred_cert</Certificate></CryptoIdentCred><SSLServerProfile name="tls-server-profile-default" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>off</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">tls-server-profile-default_idcred</Idcred>
+<RequestClientAuth>off</RequestClientAuth>
+<RequireClientAuth>off</RequireClientAuth>
+<ValidateClientCert>off</ValidateClientCert>
+<SendClientAuthCAList>on</SendClientAuthCAList>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>20</CacheSize>
+<SSLOptions>
+<max-duration>off</max-duration>
+<max-renegotiation>on</max-renegotiation></SSLOptions>
+<MaxSSLDuration>60</MaxSSLDuration>
+<NumberOfRenegotiationAllowed>0</NumberOfRenegotiationAllowed>
+<ProhibitResumeOnReneg>off</ProhibitResumeOnReneg>
+<Compression>off</Compression>
+<AllowLegacyRenegotiation>off</AllowLegacyRenegotiation>
+<PreferServerCiphers>on</PreferServerCiphers>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves></SSLServerProfile><SSLSNIMapping name="apiconnect_https_server_map" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<SNIMapping>
+<HostNameWildmat>*</HostNameWildmat>
+<SSLServer class="SSLServerProfile">tls-server-profile-default</SSLServer></SNIMapping></SSLSNIMapping><SSLSNIServerProfile name="apiconnect_https_sni_server" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>off</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<SNIServerMapping class="SSLSNIMapping">apiconnect_https_server_map</SNIServerMapping>
+<SNIServerDefault class="SSLServerProfile">tls-server-profile-default</SNIServerDefault>
+<SSLOptions>
+<max-duration>off</max-duration>
+<max-renegotiation>on</max-renegotiation></SSLOptions>
+<MaxSSLDuration>3600</MaxSSLDuration>
+<NumberOfRenegotiationAllowed>0</NumberOfRenegotiationAllowed></SSLSNIServerProfile><HTTPSSourceProtocolHandler name="apiconnect_https_9443" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<LocalAddress>172.18.0.6</LocalAddress>
+<LocalPort>9443</LocalPort>
+<HTTPVersion>HTTP/1.1</HTTPVersion>
+<AllowedFeatures>
+<HTTP-1.0>on</HTTP-1.0>
+<HTTP-1.1>on</HTTP-1.1>
+<HTTP-2.0>off</HTTP-2.0>
+<POST>on</POST>
+<GET>on</GET>
+<PUT>on</PUT>
+<PATCH>on</PATCH>
+<HEAD>on</HEAD>
+<OPTIONS>on</OPTIONS>
+<TRACE>off</TRACE>
+<DELETE>on</DELETE>
+<CONNECT>off</CONNECT>
+<CustomMethods>on</CustomMethods>
+<QueryString>on</QueryString>
+<FragmentIdentifiers>on</FragmentIdentifiers>
+<DotDot>off</DotDot>
+<CmdExe>off</CmdExe></AllowedFeatures>
+<PersistentConnections>on</PersistentConnections>
+<MaxPersistentConnectionsReuse>5000</MaxPersistentConnectionsReuse>
+<AllowCompression>off</AllowCompression>
+<AllowWebSocketUpgrade>off</AllowWebSocketUpgrade>
+<WebSocketIdleTimeout>0</WebSocketIdleTimeout>
+<MaxURLLen>16384</MaxURLLen>
+<MaxTotalHdrLen>128000</MaxTotalHdrLen>
+<MaxHdrCount>0</MaxHdrCount>
+<MaxNameHdrLen>0</MaxNameHdrLen>
+<MaxValueHdrLen>0</MaxValueHdrLen>
+<MaxQueryStringLen>0</MaxQueryStringLen>
+<CredentialCharset>protocol</CredentialCharset>
+<SSLServerConfigType>sni</SSLServerConfigType>
+<SSLSNIServer class="SSLSNIServerProfile">apiconnect_https_sni_server</SSLSNIServer>
+<HTTP2MaxStreams>100</HTTP2MaxStreams>
+<HTTP2MaxFrameSize>16384</HTTP2MaxFrameSize>
+<HTTP2StreamHeader>off</HTTP2StreamHeader>
+<ChunkedEncoding>on</ChunkedEncoding></HTTPSSourceProtocolHandler><HTTPUserAgent name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>Default User Agent</UserSummary>
+<MaxRedirects>8</MaxRedirects>
+<Timeout>300</Timeout></HTTPUserAgent><XMLManager name="xmlmgr_apiconnect" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<CacheSize>256</CacheSize>
+<SHA1Caching>on</SHA1Caching>
+<StaticDocumentCalls>on</StaticDocumentCalls>
+<SearchResults>on</SearchResults>
+<SupportTxWarn>off</SupportTxWarn>
+<Memoization>on</Memoization>
+<ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>4194304</DocCacheSize>
+<DocMaxWrites>32768</DocMaxWrites>
+<DocCachePolicy>
+<Match>temporary:///*.json</Match>
+<Type>fixed</Type>
+<TTL>900</TTL>
+<Priority>128</Priority>
+<XC10Grid/>
+<CacheBackendResponses>off</CacheBackendResponses>
+<HTTPCacheValidation>off</HTTPCacheValidation>
+<ReturnExpired>off</ReturnExpired>
+<RESTInvalidation>off</RESTInvalidation>
+<CacheUnsafeResponse>off</CacheUnsafeResponse></DocCachePolicy>
+<UserAgent class="HTTPUserAgent">default</UserAgent></XMLManager><APIRouting name="default-api-route" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState></APIRouting><APICORS name="default-api-cors" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState></APICORS><APIClientIdentification name="default-api-client-identification" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState></APIClientIdentification><CryptoKey name="gwd_key" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///gwd/gwd_key.pem</Filename>
+<PasswordAlias>off</PasswordAlias></CryptoKey><CryptoCertificate name="gwd_cert" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///gwd/gwd_cert.pem</Filename>
+<PasswordAlias>off</PasswordAlias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoCertificate name="gwd_ca" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///gwd/gwd_ca.pem</Filename>
+<PasswordAlias>off</PasswordAlias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoIdentCred name="gwd_id_cred" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Key class="CryptoKey">gwd_key</Key>
+<Certificate class="CryptoCertificate">gwd_cert</Certificate>
+<CA class="CryptoCertificate">gwd_ca</CA></CryptoIdentCred><SSLClientProfile name="gwd_client" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>off</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">gwd_id_cred</Idcred>
+<ValidateServerCert>off</ValidateServerCert>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>100</CacheSize>
+<SSLClientFeatures>
+<use-sni>on</use-sni>
+<permit-insecure-servers>off</permit-insecure-servers>
+<compression>off</compression></SSLClientFeatures>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves>
+<UseCustomSNIHostname>no</UseCustomSNIHostname>
+<ValidateHostname>off</ValidateHostname>
+<HostnameValidationFailOnError>off</HostnameValidationFailOnError></SSLClientProfile><SSLServerProfile name="gwd_server" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>off</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">gwd_id_cred</Idcred>
+<RequestClientAuth>off</RequestClientAuth>
+<RequireClientAuth>off</RequireClientAuth>
+<ValidateClientCert>off</ValidateClientCert>
+<SendClientAuthCAList>on</SendClientAuthCAList>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>20</CacheSize>
+<SSLOptions>
+<max-duration>off</max-duration>
+<max-renegotiation>on</max-renegotiation></SSLOptions>
+<MaxSSLDuration>60</MaxSSLDuration>
+<NumberOfRenegotiationAllowed>0</NumberOfRenegotiationAllowed>
+<ProhibitResumeOnReneg>off</ProhibitResumeOnReneg>
+<Compression>off</Compression>
+<AllowLegacyRenegotiation>off</AllowLegacyRenegotiation>
+<PreferServerCiphers>on</PreferServerCiphers>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves></SSLServerProfile><GatewayPeering name="gwd" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<LocalAddress>eth0_ipv4_1</LocalAddress>
+<LocalPort>16380</LocalPort>
+<MonitorPort>26380</MonitorPort>
+<EnablePeerGroup>on</EnablePeerGroup>
+<Priority>100</Priority>
+<EnableSSL>off</EnableSSL>
+<PersistenceLocation>memory</PersistenceLocation>
+<LocalDirectory>local:///</LocalDirectory>
+<LogLevel>internal</LogLevel></GatewayPeering><GatewayPeering name="default-gateway-peering" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>disabled</mAdminState>
+<LocalAddress>0.0.0.0</LocalAddress>
+<LocalPort>16380</LocalPort>
+<MonitorPort>26380</MonitorPort>
+<EnablePeerGroup>off</EnablePeerGroup>
+<Priority>100</Priority>
+<EnableSSL>on</EnableSSL>
+<PersistenceLocation>memory</PersistenceLocation>
+<LocalDirectory>local:///</LocalDirectory>
+<LogLevel>internal</LogLevel></GatewayPeering><GatewayPeeringManager name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>disabled</mAdminState>
+<APIConnectGatewayService class="GatewayPeering">default-gateway-peering</APIConnectGatewayService>
+<RateLimit class="GatewayPeering">default-gateway-peering</RateLimit>
+<Subscription class="GatewayPeering">default-gateway-peering</Subscription></GatewayPeeringManager><APIConnectGatewayService name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<LocalAddress>eth0_ipv4_1</LocalAddress>
+<LocalPort>3000</LocalPort>
+<SSLClient class="SSLClientProfile">gwd_client</SSLClient>
+<SSLServer class="SSLServerProfile">gwd_server</SSLServer>
+<APIGatewayAddress>eth0_ipv4_1</APIGatewayAddress>
+<APIGatewayPort>9443</APIGatewayPort>
+<GatewayPeering class="GatewayPeering">gwd</GatewayPeering>
+<GatewayPeeringManager class="GatewayPeeringManager">default</GatewayPeeringManager>
+<V5CompatibilityMode>off</V5CompatibilityMode>
+<V5CSlmMode>autounicast</V5CSlmMode>
+<IPUnicast/>
+<DatabaseMode>off</DatabaseMode>
+<LogStripNonAscii>off</LogStripNonAscii></APIConnectGatewayService><APIRateLimit name="default-api-ratelimit" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<APIConnectGatewayService class="APIConnectGatewayService">default</APIConnectGatewayService>
+<GatewayPeeringManager class="GatewayPeeringManager">default</GatewayPeeringManager></APIRateLimit><APISecurity name="default-api-security" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState></APISecurity><APIExecute name="default-api-execute" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState></APIExecute><APIResult name="default-api-result" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Output>OUTPUT</Output></APIResult><APIRule name="default-api-rule" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="APIRouting">default-api-route</Actions>
+<Actions class="APICORS">default-api-cors</Actions>
+<Actions class="APIClientIdentification">default-api-client-identification</Actions>
+<Actions class="APIRateLimit">default-api-ratelimit</Actions>
+<Actions class="APISecurity">default-api-security</Actions>
+<Actions class="APIExecute">default-api-execute</Actions>
+<Actions class="APIResult">default-api-result</Actions></APIRule><APIRule name="default-api-error-rule" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="APIResult">default-api-result</Actions></APIRule><AssemblyActionJWTGenerate name="localtest_sandbox_sports-api_1.0.0_jwt-generate_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>jwt-generate</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>generated.jwt</JWT>
+<JWTIDClaims>off</JWTIDClaims>
+<IssuerClaim>iss-claim</IssuerClaim>
+<SubjectClaim>sub-claim</SubjectClaim>
+<AudienceClaim>aud-claim</AudienceClaim>
+<ValidityPeriod>3600</ValidityPeriod>
+<SignJWK>sign-jwk-rs256</SignJWK>
+<CryptoAlgorithm>RS256</CryptoAlgorithm></AssemblyActionJWTGenerate><AssemblyActionGatewayScript name="localtest_sandbox_sports-api_1.0.0_gatewayscript_1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_sports-api_1.0.0_gatewayscript_1.js</Source></AssemblyActionGatewayScript><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_3_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_3_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_sports-api_1.0.0_invoke_3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://fancave.bluemix.net/api/team/scores?league={league}&amp;date={date}</Url>
+<Timeout>60</Timeout>
+<Method>Keep</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>on</StopOnError>
+<ErrorTypes>
+<ConnectionError>on</ConnectionError>
+<SOAPError>off</SOAPError>
+<OperationError>off</OperationError></ErrorTypes>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_3_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_3_parameter-control</ParameterControlList></AssemblyActionInvoke><APIRule name="localtest_sandbox_sports-api_1.0.0_switch2_c0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_sports-api_1.0.0_invoke_3</Actions></APIRule><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_4_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_4_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_sports-api_1.0.0_invoke_4" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[1].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://fancave.bluemix.net/api/player/list?league={league}</Url>
+<Timeout>60</Timeout>
+<Method>Keep</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>on</StopOnError>
+<ErrorTypes>
+<ConnectionError>on</ConnectionError>
+<SOAPError>off</SOAPError>
+<OperationError>off</OperationError></ErrorTypes>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_4_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_4_parameter-control</ParameterControlList></AssemblyActionInvoke><APIRule name="localtest_sandbox_sports-api_1.0.0_switch2_c1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_sports-api_1.0.0_invoke_4</Actions></APIRule><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_5_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_5_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_sports-api_1.0.0_invoke_5" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[2].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://fancave.bluemix.net/api/news/feed?league={league}</Url>
+<Timeout>60</Timeout>
+<Method>Keep</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>on</StopOnError>
+<ErrorTypes>
+<ConnectionError>on</ConnectionError>
+<SOAPError>off</SOAPError>
+<OperationError>off</OperationError></ErrorTypes>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_5_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_5_parameter-control</ParameterControlList></AssemblyActionInvoke><APIRule name="localtest_sandbox_sports-api_1.0.0_switch2_c2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_sports-api_1.0.0_invoke_5</Actions></APIRule><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_6_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_sports-api_1.0.0_invoke_6_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_sports-api_1.0.0_invoke_6" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[3].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://fancave.bluemix.net/api/team/list?league={league}</Url>
+<Timeout>60</Timeout>
+<Method>Keep</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>on</StopOnError>
+<ErrorTypes>
+<ConnectionError>on</ConnectionError>
+<SOAPError>off</SOAPError>
+<OperationError>off</OperationError></ErrorTypes>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_6_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_sports-api_1.0.0_invoke_6_parameter-control</ParameterControlList></AssemblyActionInvoke><APIRule name="localtest_sandbox_sports-api_1.0.0_switch2_c3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_sports-api_1.0.0_invoke_6</Actions></APIRule><AssemblyLogicSwitch name="localtest_sandbox_sports-api_1.0.0_switch_2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>switch</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/scores'))</Condition>
+<Execute>localtest_sandbox_sports-api_1.0.0_switch2_c0</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/players'))</Condition>
+<Execute>localtest_sandbox_sports-api_1.0.0_switch2_c1</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/news'))</Condition>
+<Execute>localtest_sandbox_sports-api_1.0.0_switch2_c2</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/teams'))</Condition>
+<Execute>localtest_sandbox_sports-api_1.0.0_switch2_c3</Execute></Case></AssemblyLogicSwitch><APIRule name="localtest_sandbox_sports-api_1.0.0_main" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionJWTGenerate">localtest_sandbox_sports-api_1.0.0_jwt-generate_0</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_sports-api_1.0.0_gatewayscript_1</Actions>
+<Actions class="AssemblyLogicSwitch">localtest_sandbox_sports-api_1.0.0_switch_2</Actions></APIRule><Assembly name="localtest_sandbox_sports-api_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Rule class="APIRule">localtest_sandbox_sports-api_1.0.0_main</Rule></Assembly><APISchema name="localtest_sandbox_sports-api_1.0.0_News_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json#/paths/~1news/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_sports-api_1.0.0_News_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_sports-api_1.0.0_News_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_sports-api_1.0.0_News" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/news</Path>
+<Operation class="APIOperation">localtest_sandbox_sports-api_1.0.0_News_GET</Operation>
+<Parameter>
+<Name>league</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISchema name="localtest_sandbox_sports-api_1.0.0_Scores_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json#/paths/~1scores/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_sports-api_1.0.0_Scores_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_sports-api_1.0.0_Scores_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_sports-api_1.0.0_Scores" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/scores</Path>
+<Operation class="APIOperation">localtest_sandbox_sports-api_1.0.0_Scores_GET</Operation>
+<Parameter>
+<Name>date</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>league</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISchema name="localtest_sandbox_sports-api_1.0.0_Players_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json#/paths/~1players/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_sports-api_1.0.0_Players_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_sports-api_1.0.0_Players_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_sports-api_1.0.0_Players" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/players</Path>
+<Operation class="APIOperation">localtest_sandbox_sports-api_1.0.0_Players_GET</Operation>
+<Parameter>
+<Name>league</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISchema name="localtest_sandbox_sports-api_1.0.0_Teams_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json#/paths/~1teams/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_sports-api_1.0.0_Teams_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_sports-api_1.0.0_Teams_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_sports-api_1.0.0_Teams" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/teams</Path>
+<Operation class="APIOperation">localtest_sandbox_sports-api_1.0.0_Teams_GET</Operation>
+<Parameter>
+<Name>league</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISecurityAPIKey name="localtest_sandbox_sports-api_1.0.0_clientID" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Where>header</Where>
+<Type>id</Type>
+<KeyName>X-IBM-Client-Id</KeyName></APISecurityAPIKey><CryptoSSKey name="default_oauth_shared_secret" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///oauth_256.txt</Filename></CryptoSSKey><OAuthProviderSettings name="localtest_sandbox_oauth2-server" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnableDebugMode>off</EnableDebugMode>
+<ProviderType>native</ProviderType>
+<ScopesAllowed>openid sports weather</ScopesAllowed>
+<SupportedGrantTypes>
+<none>off</none>
+<implicit>on</implicit>
+<password>on</password>
+<jwt>on</jwt>
+<application>on</application>
+<access_code>on</access_code></SupportedGrantTypes>
+<SupportedClientTypes>
+<confidential>on</confidential>
+<public>off</public></SupportedClientTypes>
+<APICProviderBasePath>/</APICProviderBasePath>
+<APICAuthorizeEndpoint>/oauth2/authorize</APICAuthorizeEndpoint>
+<APICTokenEndpoint>/oauth2/token</APICTokenEndpoint>
+<APICEnableIntrospection>on</APICEnableIntrospection>
+<APICIntrospectEndpoint>/oauth2/introspect</APICIntrospectEndpoint>
+<APICTokenSecret class="CryptoSSKey">default_oauth_shared_secret</APICTokenSecret>
+<APICOneTimeUseAccesstoken>off</APICOneTimeUseAccesstoken>
+<APICAccessTokenTTL>3600</APICAccessTokenTTL>
+<APICAuthCodeTTL>300</APICAuthCodeTTL>
+<APICEnableRefreshToken>on</APICEnableRefreshToken>
+<APICOneTimeUseRefreshtoken>on</APICOneTimeUseRefreshtoken>
+<APICRefreshTokenLimit>2048</APICRefreshTokenLimit>
+<APICRefreshTokenTTL>2682000</APICRefreshTokenTTL>
+<APICMaximumConsentTTL>0</APICMaximumConsentTTL>
+<AdvScopeValidationEnabled>off</AdvScopeValidationEnabled>
+<AdvancedScopeURLOverride>off</AdvancedScopeURLOverride>
+<AdvScopeURLSecurityEnabled>off</AdvScopeURLSecurityEnabled>
+<AdvScopeURLSecurity>
+<basic-auth>on</basic-auth></AdvScopeURLSecurity>
+<APICEnableOIDC>on</APICEnableOIDC>
+<APICOIDCHybridResponseTypes>
+<code_id_token>on</code_id_token>
+<code_access_token>off</code_access_token>
+<code_id_token_access_token>off</code_id_token_access_token></APICOIDCHybridResponseTypes>
+<APICSupportPKCE>on</APICSupportPKCE>
+<APICRequirePKCE>off</APICRequirePKCE>
+<APICSupportPKCEPlain>off</APICSupportPKCEPlain>
+<MetadataFrom>
+<none>off</none>
+<authentication_url>on</authentication_url>
+<external_url>off</external_url></MetadataFrom>
+<MetadataHeaderForAccessToken>X-API-OAUTH-METADATA-FOR-ACCESSTOKEN</MetadataHeaderForAccessToken>
+<MetadataHeaderForPayload>X-API-OAUTH-METADATA-FOR-PAYLOAD</MetadataHeaderForPayload>
+<EnableTokenManagement>off</EnableTokenManagement>
+<TokenManagerType>native</TokenManagerType>
+<EnableApplicationRevocation>off</EnableApplicationRevocation>
+<ApplicationRevocationEndpoint>/oauth2/revoke</ApplicationRevocationEndpoint>
+<EnableOwnerRevocation>off</EnableOwnerRevocation>
+<OwnerRevocationEndpoint>/oauth2/issued</OwnerRevocationEndpoint>
+<ThirdPartyIntrospectURLSecurity>
+<basic-auth>on</basic-auth></ThirdPartyIntrospectURLSecurity></OAuthProviderSettings><APISecurityOAuth name="localtest_sandbox_sports-api_1.0.0_oauth2-server" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<OAuthProvider class="OAuthProviderSettings">localtest_sandbox_oauth2-server</OAuthProvider>
+<OAuthFlow>application</OAuthFlow>
+<OAuthScope>openid sports weather</OAuthScope></APISecurityOAuth><APISecurityOAuthReq name="localtest_sandbox_sports-api_1.0.0_oauth2-server_req_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<APISecurityOAuthDef class="APISecurityOAuth">localtest_sandbox_sports-api_1.0.0_oauth2-server</APISecurityOAuthDef>
+<OAuthAllowedScope>sports</OAuthAllowedScope></APISecurityOAuthReq><APISecurityRequirement name="localtest_sandbox_sports-api_1.0.0_secr_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Security class="APISecurityAPIKey">localtest_sandbox_sports-api_1.0.0_clientID</Security>
+<Security class="APISecurityOAuthReq">localtest_sandbox_sports-api_1.0.0_oauth2-server_req_0</Security></APISecurityRequirement><APIDefinition name="localtest_sandbox_sports-api_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<ID>f420d621-41d9-483e-93b1-9a625e9649ea</ID>
+<Name>sports-api</Name>
+<Version>1.0.0</Version>
+<BasePath>/sports</BasePath>
+<Type>standard</Type>
+<Assembly class="Assembly">localtest_sandbox_sports-api_1.0.0</Assembly>
+<Path class="APIPath">localtest_sandbox_sports-api_1.0.0_News</Path>
+<Path class="APIPath">localtest_sandbox_sports-api_1.0.0_Scores</Path>
+<Path class="APIPath">localtest_sandbox_sports-api_1.0.0_Players</Path>
+<Path class="APIPath">localtest_sandbox_sports-api_1.0.0_Teams</Path>
+<SwaggerLocation>temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json</SwaggerLocation>
+<SecurityRequirement class="APISecurityRequirement">localtest_sandbox_sports-api_1.0.0_secr_0</SecurityRequirement>
+<RequireAPIMutualTLS>off</RequireAPIMutualTLS>
+<APIMutualTLSSource>header</APIMutualTLSSource>
+<Properties>
+<PropertyName>aud-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>client-id-12345</Value></Properties>
+<Properties>
+<PropertyName>iss-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>ozairs4@example.com</Value></Properties>
+<Properties>
+<PropertyName>sub-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>ozairs@example.com</Value></Properties>
+<Properties>
+<PropertyName>target-server</PropertyName>
+<Catalog>*</Catalog>
+<Value>https://fancave.bluemix.net</Value></Properties>
+<Properties>
+<PropertyName>sign-jwk-rs256</PropertyName>
+<Catalog>*</Catalog>
+<Value>{     "p": "8qKYF9FqYrrAIsCm5kiy2UiGFfhjghYquB-xdHLYz6wXHdCPgIPH9EtynNIchidPRClw5g_NPXu2X6z3ol35c--YEy6wQBRnsYQAvPIQRGVxvXRsVaZhg-geE_msIQ22h5JXQbMS9NDFcZBZYLu5hgAvn1Qu8CV6exeeGohNAWU",     "kty": "RSA",     "q": "6QH20yqJZeNg1mHNz0tifOyEIYvQrnZh5RHhgo7rXOa6nYfUBRYzQ-a3TtDVqYMudo4DITb0t4EX6CynpXYwtXJTwlumoqPD1Osu4_lsBwlhMH7fhiZg63wxQ4dNPrIblrVi5rXPCJkRtIda2Y-9r4pIQm2JyaXcWXxM2feBINc",     "d": "2RRC9mZZQRBaVyiuV37Ls14_lOxbRuejBp3WtxWFxNl3EpDV-dHRVeVPZ7E0UgjjhrtgokWbUKPoNie3sUL0X3_Ddf-8fQ2pEN8xRPlovG2grTO2dP4vNPxBJGSFxhA-p4rkhuhQbqRJDSH-EuC1Yb6uvEGzu8bvezvCkr_uYMmst2y2qEwTZzgUbM4iK2JUuuy-SbJ3tKw9DAFRmSSLeI9ihd_ieACozjv4mucPaSr6FvJaGGxEpUQnZV8FICRLLAufpNXUrC5q3bGDXklUapQzglTAF0dBLz4JT6SaWlXVXrwQ9HfoQaxuW3epawNxmSjWQvpTJCmuPr27Q2-tYQ",     "e": "AQAB",     "use": "sig",     "kid": "ibm-apiconnect",     "qi": "fZcdGnJacUC0QFGcngRD_TQKLVgeB9nDMsOAvCvJCZVBNdD3m7ra4Kb1AOrdhvsCHh0VQMZfc-nLyhhz2JF1-p2w8qbTKoQ3S3DLE2VyoyBfEysNBd_KvnWYoQG8xo8OEHiJqCekQQkph6Fkkmev6KuZdxRJUOFjJ5YSbj-jkcY",     "dp": "ZbRwCnPWo0Hire6RRzAr_9ZdljIDDBFcoMdwK_7EEPDy06WLsXQLycQia8fK-xTZLhos39K51k7YGGy5dI7ttII2_btxV7r16DwLzyesV-8p6R83FgPjFlai3P6n_0bvPw7BkqGMjaBBUyQNwvWNg7TqQWAZOMKM_7HbrQV7Od0",     "alg": "RS256",     "dq": "BmvFb4BGlQY1DvNXBpVfO24RHhOKRqSAgh2CB2UE22SIU_sAPruj4gUjnAppOOiiiSXUtD-dcskd7Yn9fLPLF9T0tfBsoSK-LMnmWuXusiryALIeWsYH-bVMbj32RPoHhJmvBgiQkf4V3NG2ETTC12mKIDqAh4wIjHa-b2tApbU",     "n": "3NfZAKgsyq0mOiiOTIKs27fIH5Wgetp6W6hvm3XzCd5AzoxUShrYLh-3kT3FS1GNEpwHjpfbl4fM2xsX9WyKz5UQyvgDrM9-qrh-a0ZUTVeGqeD0UcktNDsoAxMRSfRqNtCBBDtJzKz5wjWtM-0mFHU_nD2MTRrME9GjtCfe8JrDuWMmQ2HoY-7B3mqovaL70Dw-0n48wOS_HbKu4c8AY01xvMOAWv_I5-b2lYtuBpGEO921AuiKQQyUF4OBPZs9pp4aXtrLQ-_pm6HDijTq-j9Yqw0s9pw5RuZaXyfcZidp0Zid4YS_qjyQOkj_utWRf_R8X5FslTvJFj8VP73L0w" }</Value></Properties>
+<CORSToggle>on</CORSToggle>
+<ActivityLogToggle>on</ActivityLogToggle>
+<Content>activity</Content>
+<ErrorContent>header</ErrorContent>
+<MessageBuffering>off</MessageBuffering>
+<DeploymentState>running</DeploymentState>
+<ShareRateLimitCount>unset</ShareRateLimitCount></APIDefinition><AssemblyActionSetVar name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_set-variable_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>x-ibm-oauth-oidc-auto-generated-set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>oauth.oidc.issuer.url</Name>
+<Type>any</Type>
+<Value>$(JWTIssuer)</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>oauth.oidc.jwt.sign.jwk</Name>
+<Type>any</Type>
+<Value>$(JWSSignPrivateKey)</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>oauth.oidc.jwt.sign.algorithm</Name>
+<Type>any</Type>
+<Value>$(JWSAlgorithm)</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>oauth.oidc.jwk.kid</Name>
+<Type>any</Type>
+<Value>$(JWSSignKeyKID)</Value></Variable></AssemblyActionSetVar><AssemblyActionOAuth name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>oauth-auto-generated-1</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<OAuthProviderSettingsReference>
+<URL/>
+<Literal/>
+<Default class="OAuthProviderSettings">localtest_sandbox_oauth2-server</Default></OAuthProviderSettingsReference>
+<SupportedOAuthComponents>
+<none>off</none>
+<OAuthValidateRequest>on</OAuthValidateRequest>
+<OAuthGenerateAZCode>off</OAuthGenerateAZCode>
+<OAuthVerifyAZCode>off</OAuthVerifyAZCode>
+<OAuthVerifyRefreshToken>off</OAuthVerifyRefreshToken>
+<OAuthCollectMetadata>off</OAuthCollectMetadata>
+<OAuthGenerateAccessToken>off</OAuthGenerateAccessToken>
+<OAuthIntrospectToken>off</OAuthIntrospectToken>
+<OAuthRevokeToken>off</OAuthRevokeToken></SupportedOAuthComponents></AssemblyActionOAuth><AssemblyActionSetVar name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_set-variable_3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>oauth-auto-generated-grant-jwt-set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>oauth.processing.jwt.jwk</Name>
+<Type>any</Type>
+<Value>$(JWTGrantTypeJWK)</Value></Variable></AssemblyActionSetVar><AssemblyActionJWTValidate name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_jwt-validate_4" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>oauth-auto-generated-grant-jwt-validate</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[0].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>oauth.processing.assertion</JWT>
+<OutputClaims>oauth.processing.jwt.claims</OutputClaims>
+<VerifyJWK>oauth.processing.jwt.jwk</VerifyJWK></AssemblyActionJWTValidate><AssemblyActionGatewayScript name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_5" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>oauth-auto-generated-grant-jwt-gws</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[0].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_5.js</Source></AssemblyActionGatewayScript><AssemblyActionOAuth name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_6" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>oauth-auto-generated-grant-jwt-oauth</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[0].execute[3]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<OAuthProviderSettingsReference>
+<URL/>
+<Literal/>
+<Default class="OAuthProviderSettings">localtest_sandbox_oauth2-server</Default></OAuthProviderSettingsReference>
+<SupportedOAuthComponents>
+<none>off</none>
+<OAuthValidateRequest>off</OAuthValidateRequest>
+<OAuthGenerateAZCode>off</OAuthGenerateAZCode>
+<OAuthVerifyAZCode>off</OAuthVerifyAZCode>
+<OAuthVerifyRefreshToken>on</OAuthVerifyRefreshToken>
+<OAuthCollectMetadata>on</OAuthCollectMetadata>
+<OAuthGenerateAccessToken>on</OAuthGenerateAccessToken>
+<OAuthIntrospectToken>off</OAuthIntrospectToken>
+<OAuthRevokeToken>off</OAuthRevokeToken></SupportedOAuthComponents></AssemblyActionOAuth><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_set-variable_3</Actions>
+<Actions class="AssemblyActionJWTValidate">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_jwt-validate_4</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_5</Actions>
+<Actions class="AssemblyActionOAuth">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_6</Actions></APIRule><SSLClientProfile name="localtest_sandbox_tlsp-tls-client-profile-defaultV1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>off</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<ValidateServerCert>off</ValidateServerCert>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>100</CacheSize>
+<SSLClientFeatures>
+<use-sni>on</use-sni>
+<permit-insecure-servers>on</permit-insecure-servers>
+<compression>off</compression></SSLClientFeatures>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves>
+<UseCustomSNIHostname>no</UseCustomSNIHostname>
+<ValidateHostname>off</ValidateHostname>
+<HostnameValidationFailOnError>off</HostnameValidationFailOnError></SSLClientProfile><APIAuthURLRegistry name="localtest_sandbox_reg-local-registry" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<AuthURL>https://eth0_ipv4_1:9443/localtest/sandbox/utility/basic-auth/spoon/spoon</AuthURL>
+<TLSClientProfile class="SSLClientProfile">localtest_sandbox_tlsp-tls-client-profile-defaultV1.0.0</TLSClientProfile></APIAuthURLRegistry><AssemblyActionUserSecurity name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_user-security_7" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>user-security-auto-generated-password</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[1].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<FactorID>default</FactorID>
+<ExtractIdentityMethod>context-var</ExtractIdentityMethod>
+<EIStopOnError>off</EIStopOnError>
+<UserContextVariable>request.parameters.username.values</UserContextVariable>
+<PassContextVariable>request.parameters.password.values</PassContextVariable>
+<RedirectTimeLimit>300</RedirectTimeLimit>
+<EIDefaultForm>on</EIDefaultForm>
+<EICustomFormContentSecurityPolicy>default-src 'self'</EICustomFormContentSecurityPolicy>
+<EIFormTimeLimit>300</EIFormTimeLimit>
+<UserAuthMethod>user-registry</UserAuthMethod>
+<AUStopOnError>off</AUStopOnError>
+<UserRegistry class="APIAuthURLRegistry">localtest_sandbox_reg-local-registry</UserRegistry>
+<AuthResponseHeadersPattern>(?)x-api*</AuthResponseHeadersPattern>
+<AuthResponseCredentialHeader>X-API-Authenticated-Credential</AuthResponseCredentialHeader>
+<UserAZMethod>authenticated</UserAZMethod>
+<AZStopOnError>on</AZStopOnError>
+<AZDefaultForm>on</AZDefaultForm>
+<AZCustomFormContentSecurityPolicy>default-src 'self'</AZCustomFormContentSecurityPolicy>
+<AZFormTimeLimit>300</AZFormTimeLimit>
+<AZTableDisplayCheckboxes>off</AZTableDisplayCheckboxes>
+<AZTableDynamicEntries>user.default.az.dynamic_entries</AZTableDynamicEntries></AssemblyActionUserSecurity><AssemblyActionOAuth name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_8" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>oauth-auto-generated-3</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[1].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<OAuthProviderSettingsReference>
+<URL/>
+<Literal/>
+<Default class="OAuthProviderSettings">localtest_sandbox_oauth2-server</Default></OAuthProviderSettingsReference>
+<SupportedOAuthComponents>
+<none>off</none>
+<OAuthValidateRequest>off</OAuthValidateRequest>
+<OAuthGenerateAZCode>off</OAuthGenerateAZCode>
+<OAuthVerifyAZCode>on</OAuthVerifyAZCode>
+<OAuthVerifyRefreshToken>on</OAuthVerifyRefreshToken>
+<OAuthCollectMetadata>on</OAuthCollectMetadata>
+<OAuthGenerateAccessToken>on</OAuthGenerateAccessToken>
+<OAuthIntrospectToken>off</OAuthIntrospectToken>
+<OAuthRevokeToken>off</OAuthRevokeToken></SupportedOAuthComponents></AssemblyActionOAuth><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionUserSecurity">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_user-security_7</Actions>
+<Actions class="AssemblyActionOAuth">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_8</Actions></APIRule><AssemblyActionUserSecurity name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_user-security_9" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>user-security-auto-generated</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[2].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<FactorID>default</FactorID>
+<ExtractIdentityMethod>basic</ExtractIdentityMethod>
+<EIStopOnError>on</EIStopOnError>
+<RedirectTimeLimit>300</RedirectTimeLimit>
+<EIDefaultForm>on</EIDefaultForm>
+<EICustomFormContentSecurityPolicy>default-src 'self'</EICustomFormContentSecurityPolicy>
+<EIFormTimeLimit>300</EIFormTimeLimit>
+<UserAuthMethod>user-registry</UserAuthMethod>
+<AUStopOnError>on</AUStopOnError>
+<UserRegistry class="APIAuthURLRegistry">localtest_sandbox_reg-local-registry</UserRegistry>
+<AuthResponseHeadersPattern>(?)x-api*</AuthResponseHeadersPattern>
+<AuthResponseCredentialHeader>X-API-Authenticated-Credential</AuthResponseCredentialHeader>
+<UserAZMethod>authenticated</UserAZMethod>
+<AZStopOnError>on</AZStopOnError>
+<AZDefaultForm>on</AZDefaultForm>
+<AZCustomFormContentSecurityPolicy>default-src 'self'</AZCustomFormContentSecurityPolicy>
+<AZFormTimeLimit>300</AZFormTimeLimit>
+<AZTableDisplayCheckboxes>off</AZTableDisplayCheckboxes>
+<AZTableDynamicEntries>user.default.az.dynamic_entries</AZTableDynamicEntries></AssemblyActionUserSecurity><AssemblyActionOAuth name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_10" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>oauth-auto-generated-2</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[2].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<OAuthProviderSettingsReference>
+<URL/>
+<Literal/>
+<Default class="OAuthProviderSettings">localtest_sandbox_oauth2-server</Default></OAuthProviderSettingsReference>
+<SupportedOAuthComponents>
+<none>off</none>
+<OAuthValidateRequest>off</OAuthValidateRequest>
+<OAuthGenerateAZCode>on</OAuthGenerateAZCode>
+<OAuthVerifyAZCode>on</OAuthVerifyAZCode>
+<OAuthVerifyRefreshToken>off</OAuthVerifyRefreshToken>
+<OAuthCollectMetadata>on</OAuthCollectMetadata>
+<OAuthGenerateAccessToken>on</OAuthGenerateAccessToken>
+<OAuthIntrospectToken>off</OAuthIntrospectToken>
+<OAuthRevokeToken>off</OAuthRevokeToken></SupportedOAuthComponents></AssemblyActionOAuth><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionUserSecurity">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_user-security_9</Actions>
+<Actions class="AssemblyActionOAuth">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_10</Actions></APIRule><AssemblyActionOAuth name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_11" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>oauth-auto-generated-4</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2].switch.case[3].otherwise[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<OAuthProviderSettingsReference>
+<URL/>
+<Literal/>
+<Default class="OAuthProviderSettings">localtest_sandbox_oauth2-server</Default></OAuthProviderSettingsReference>
+<SupportedOAuthComponents>
+<none>off</none>
+<OAuthValidateRequest>off</OAuthValidateRequest>
+<OAuthGenerateAZCode>off</OAuthGenerateAZCode>
+<OAuthVerifyAZCode>off</OAuthVerifyAZCode>
+<OAuthVerifyRefreshToken>off</OAuthVerifyRefreshToken>
+<OAuthCollectMetadata>off</OAuthCollectMetadata>
+<OAuthGenerateAccessToken>off</OAuthGenerateAccessToken>
+<OAuthIntrospectToken>on</OAuthIntrospectToken>
+<OAuthRevokeToken>on</OAuthRevokeToken></SupportedOAuthComponents></AssemblyActionOAuth><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_ow" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionOAuth">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_11</Actions></APIRule><AssemblyLogicSwitch name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch_2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>oauth-auto-generated-switch</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Case>
+<Condition>($operationPath() = '/oauth2/token' and oauth.processing.grant_type = 'urn:ietf:params:oauth:grant-type:jwt-bearer')</Condition>
+<Execute>localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c0</Execute></Case>
+<Case>
+<Condition>($operationPath() = '/oauth2/token')</Condition>
+<Execute>localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c1</Execute></Case>
+<Case>
+<Condition>($operationPath() = '/oauth2/authorize')</Condition>
+<Execute>localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_c2</Execute></Case>
+<Otherwise>localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch2_ow</Otherwise></AssemblyLogicSwitch><AssemblyActionJWTGenerate name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_jwt-generate_13" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>x-ibm-oauth-oidc-auto-generated-jwt-generate</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[3].switch.case[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>oauth.oidc.idtoken</JWT>
+<JWTIDClaims>on</JWTIDClaims>
+<IssuerClaim>oauth.oidc.issuer.url</IssuerClaim>
+<SubjectClaim>oauth.oidc.sub</SubjectClaim>
+<AudienceClaim>oauth.oidc.aud</AudienceClaim>
+<ValidityPeriod>3600</ValidityPeriod>
+<PrivateClaim>oauth.oidc.claims</PrivateClaim>
+<SignJWK>oauth.oidc.jwt.sign.jwk</SignJWK>
+<CryptoAlgorithm>HS256</CryptoAlgorithm></AssemblyActionJWTGenerate><AssemblyActionGatewayScript name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_14" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary/>
+<Title>x-ibm-oauth-oidc-auto-generated-gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[3].switch.case[0].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_14.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch12_c0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionJWTGenerate">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_jwt-generate_13</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_14</Actions></APIRule><AssemblyLogicSwitch name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch_12" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>x-ibm-oauth-oidc-auto-generated-switch</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[3]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Case>
+<Condition>($exists(oauth.oidc.enabled))</Condition>
+<Execute>localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch12_c0</Execute></Case></AssemblyLogicSwitch><APIRule name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_main" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_set-variable_0</Actions>
+<Actions class="AssemblyActionOAuth">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_oauth_1</Actions>
+<Actions class="AssemblyLogicSwitch">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch_2</Actions>
+<Actions class="AssemblyLogicSwitch">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_switch_12</Actions></APIRule><Assembly name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Rule class="APIRule">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_main</Rule></Assembly><APIOperation name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<ResponseSchema>
+<StatusCode>302</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<Parameter>
+<Name>scope</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>state</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>client_id</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>redirect_uri</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>response_type</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIOperation name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize_POST" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>POST</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<Parameter>
+<Name>scope</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>formdata</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>client_id</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>formdata</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>redirect_uri</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>formdata</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>response_type</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>formdata</Where>
+<SchemaOrFormat/></Parameter>
+<RemoveSecurity>on</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/oauth2/authorize</Path>
+<Operation class="APIOperation">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize_GET</Operation>
+<Operation class="APIOperation">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize_POST</Operation></APIPath><APIOperation name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Token_POST" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>POST</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<Parameter>
+<Name>grant_type</Name>
+<Required>on</Required>
+<Type>string</Type>
+<Where>formdata</Where>
+<SchemaOrFormat/></Parameter>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Token" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/oauth2/token</Path>
+<Operation class="APIOperation">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Token_POST</Operation></APIPath><APISchema name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_definitions_access_token_response" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0.json#/definitions/access_token_response</JSONSchema></APISchema><APIDefinition name="localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<ID>dff44a0a-4242-48e2-bee7-66f74298e031</ID>
+<Name>oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd</Name>
+<Version>1.0.0</Version>
+<BasePath>/</BasePath>
+<Type>standard</Type>
+<Assembly class="Assembly">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0</Assembly>
+<Path class="APIPath">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Authorize</Path>
+<Path class="APIPath">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_Oauth2Token</Path>
+<SwaggerLocation>temporary:///swagger/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0.json</SwaggerLocation>
+<RequireAPIMutualTLS>off</RequireAPIMutualTLS>
+<APIMutualTLSSource>header</APIMutualTLSSource>
+<Properties>
+<PropertyName>JWTIssuer</PropertyName>
+<Catalog>*</Catalog>
+<Value>IBM APIConnect</Value></Properties>
+<Properties>
+<PropertyName>JWSAlgorithm</PropertyName>
+<Catalog>*</Catalog>
+<Value>HS256</Value></Properties>
+<Properties>
+<PropertyName>JWSSignKeyKID</PropertyName>
+<Catalog>*</Catalog>
+<Value/></Properties>
+<Properties>
+<PropertyName>JWTGrantTypeJWK</PropertyName>
+<Catalog>*</Catalog>
+<Value>{   "kty": "RSA",   "d":         "IWwDpREZSZ3sF9GrEX1SXb8sLpSFjUL2XtJXmbQNGssBTx_WsoWXVdP8agewUjy0dXjOi4kazbb5foQ4Kn8RPx64pkozpdopx6kwsS9yIh_w0bB-1eJzIxiV1f18XX5g_Sqv_PJ63oNgS0QQCh3mECqp_wlzKbiDH5wSHDAuNLFXCTpCpxTe_Iyd2z1kJNDDSExs5Hj8oFCUSxXmYD9RM7UPgdae-bOayv4s5HCCif3ZrVzm-TjvNbLhcP75bRRzREPk2QjN2e1yPHs2uJBHmSQdiQ58G43fHs8Kqi5HDrF8e77vFB03MCUq37e3WcnrKRR8JxlrKGgf3PhDJp0OUQ",           "e": "AQAB",   "use": "sig",   "kid": "ozairs",   "alg": "RS256",   "n":         "hDyppyzLbrV4dDBDze5g-4LH5M9JiFKmFAp8Mt-GkOjhbn3VYU937GRugUTXyM9TrV15LJFA1PA5NRGZO-R8Wv_vQx6hmbbsD2ChouZlSWnSJ3ZFdijRSY_-vddbufAG2ucK0CCD0TyBD5WYe9tnpMOCxv4eGAsUN6BT9OhcEJEWv3cvyHK6DUATjpx4ExaQi1wgAVbfCBK-A5au4ApOLRQjZ-tLCt3rTbqtkRUuES4nf1bS70YU8rsPBK71gQz2KZP4PHRfBGYZTy-8XWCgG3yOJpd7kRz0ratDc-xJC2wlGK4Q8kTPmhMvi6IvSJswQTDu4spSilcbdqEOVKfzeQ"         }</Value></Properties>
+<Properties>
+<PropertyName>JWSSignPrivateKey</PropertyName>
+<Catalog>*</Catalog>
+<Value>{   "kty": "oct",   "use": "sig",   "kid": "ozairs",   "k": "IRX6xLvAcGlPHnPqFWR_RXPJkSgYbCBTC7tE_k61WbYy6mpYtMAG0BGBtfLOcoT2U8n1X2EFl0ykV_bWg-V6YRJM1I3Mw_KtdwnNSXONC-d9JochuMQCGvv6QyjP77qdDeNtHLrrs9lBP4jXO5C22AGPgvtH3dD2mpmE7jlRocd1A8-eguKWdH5p0b8t80vFhbxCK9sY5fDTwOeJ5wH38F_lFrsLFfXqMkYD_HhMPUJOz1sP0HxqQCj1HM24EY-cHwsLg_3hnweE8wVsSTZZOMxqqGFFdjbXGiXm1OllSIJz9ptd90dws176jP7BkaxB5nG0QdsHH9btUTGjZmD_gg",   "alg": "HS256" }</Value></Properties>
+<Schemas>
+<Name>access_token_response</Name>
+<Schema class="APISchema">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_definitions_access_token_response</Schema></Schemas>
+<CORSToggle>on</CORSToggle>
+<ActivityLogToggle>on</ActivityLogToggle>
+<Content>activity</Content>
+<ErrorContent>payload</ErrorContent>
+<MessageBuffering>off</MessageBuffering>
+<DeploymentState>running</DeploymentState>
+<ShareRateLimitCount>unset</ShareRateLimitCount></APIDefinition><APIPlan name="localtest_sandbox_sports-api-auto-product_1.0.0_default" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Name>default</Name>
+<ProductID>1b94b8bb-170a-43b5-834a-9f38bc5295bb</ProductID>
+<ProductName>sports-api-auto-product</ProductName>
+<ProductVersion>1.0.0</ProductVersion>
+<ProductTitle>sports-api auto product</ProductTitle>
+<RateLimit>
+<Name>rate-limit</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></RateLimit>
+<API class="APIDefinition">localtest_sandbox_sports-api_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0</API>
+<RateLimitScope>per-application</RateLimitScope></APIPlan><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_1.js</Source></AssemblyActionGatewayScript><ControlList name="localtest_sandbox_utility_1.0.0_invoke_2_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_utility_1.0.0_invoke_2_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>whitelist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_utility_1.0.0_invoke_2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[0].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://httpbin.org/get</Url>
+<Timeout>60</Timeout>
+<Method>GET</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>off</StopOnError>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_2_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_2_parameter-control</ParameterControlList></AssemblyActionInvoke><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[0].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_3.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_1</Actions>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_utility_1.0.0_invoke_2</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_3</Actions></APIRule><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_4" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[1].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_4.js</Source></AssemblyActionGatewayScript><ControlList name="localtest_sandbox_utility_1.0.0_invoke_5_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_utility_1.0.0_invoke_5_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>whitelist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_utility_1.0.0_invoke_5" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[1].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://httpbin.org/get</Url>
+<Timeout>60</Timeout>
+<Method>GET</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>off</StopOnError>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_5_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_5_parameter-control</ParameterControlList></AssemblyActionInvoke><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_6" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[1].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_6.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_4</Actions>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_utility_1.0.0_invoke_5</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_6</Actions></APIRule><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_7" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[2].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_7.js</Source></AssemblyActionGatewayScript><AssemblyActionJWTValidate name="localtest_sandbox_utility_1.0.0_jwt-validate_8" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>jwt-validate</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[2].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>request.headers.authorization</JWT>
+<OutputClaims>decoded.claims</OutputClaims>
+<IssuerClaim>.*</IssuerClaim>
+<AudienceClaim>.*</AudienceClaim>
+<VerifyJWK>verify-jwk-256</VerifyJWK></AssemblyActionJWTValidate><AssemblyActionSetVar name="localtest_sandbox_utility_1.0.0_set-variable_9" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[2].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>message.body</Name>
+<Type>string</Type>
+<Value>$(decoded.claims)</Value></Variable></AssemblyActionSetVar><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_7</Actions>
+<Actions class="AssemblyActionJWTValidate">localtest_sandbox_utility_1.0.0_jwt-validate_8</Actions>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_utility_1.0.0_set-variable_9</Actions></APIRule><AssemblyActionJWTGenerate name="localtest_sandbox_utility_1.0.0_jwt-generate_10" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>jwt-generate</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[3].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>generated.jwt</JWT>
+<JWTIDClaims>off</JWTIDClaims>
+<IssuerClaim>iss-claim</IssuerClaim>
+<SubjectClaim>sub-claim</SubjectClaim>
+<AudienceClaim>aud-claim</AudienceClaim>
+<ValidityPeriod>3600</ValidityPeriod>
+<SignJWK>sign-jwk-rs256</SignJWK>
+<CryptoAlgorithm>RS256</CryptoAlgorithm></AssemblyActionJWTGenerate><AssemblyActionSetVar name="localtest_sandbox_utility_1.0.0_set-variable_11" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[3].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>message.body</Name>
+<Type>string</Type>
+<Value>$(generated.jwt)</Value></Variable></AssemblyActionSetVar><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionJWTGenerate">localtest_sandbox_utility_1.0.0_jwt-generate_10</Actions>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_utility_1.0.0_set-variable_11</Actions></APIRule><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_12" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>read-input</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[4].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_12.js</Source></AssemblyActionGatewayScript><ControlList name="localtest_sandbox_utility_1.0.0_invoke_13_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_utility_1.0.0_invoke_13_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>whitelist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_utility_1.0.0_invoke_13" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[4].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://openidconnect.googleapis.com/v1/userinfo?scope=openid%20email%20profile</Url>
+<Timeout>60</Timeout>
+<Method>GET</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>off</StopOnError>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_13_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_13_parameter-control</ParameterControlList></AssemblyActionInvoke><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_14" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>parse-response</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[4].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_14.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c4" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_12</Actions>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_utility_1.0.0_invoke_13</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_14</Actions></APIRule><ControlList name="localtest_sandbox_utility_1.0.0_invoke_15_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_utility_1.0.0_invoke_15_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>whitelist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_utility_1.0.0_invoke_15" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>get-jwk-auth0</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[5].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>https://ozairs.auth0.com/.well-known/jwks.json</Url>
+<Timeout>60</Timeout>
+<Method>GET</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>off</StopOnError>
+<Output>rsa256Key</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_15_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_utility_1.0.0_invoke_15_parameter-control</ParameterControlList></AssemblyActionInvoke><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_16" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>save-jwk</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[5].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_16.js</Source></AssemblyActionGatewayScript><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_17" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[5].execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_17.js</Source></AssemblyActionGatewayScript><AssemblyActionJWTValidate name="localtest_sandbox_utility_1.0.0_jwt-validate_18" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>jwt-validate-jwk</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[5].execute[3]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<JWT>token</JWT>
+<OutputClaims>decoded.claims</OutputClaims>
+<IssuerClaim>.*</IssuerClaim>
+<AudienceClaim>.*</AudienceClaim>
+<VerifyJWK>jwk-key</VerifyJWK></AssemblyActionJWTValidate><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_19" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[5].execute[4]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_19.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c5" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_utility_1.0.0_invoke_15</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_16</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_17</Actions>
+<Actions class="AssemblyActionJWTValidate">localtest_sandbox_utility_1.0.0_jwt-validate_18</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_19</Actions></APIRule><AssemblyActionSetVar name="localtest_sandbox_utility_1.0.0_set-variable_20" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[6].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>demo.identity.redirect.username</Name>
+<Type>string</Type>
+<Value>ozairs</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>demo.identity.redirect.confirmation</Name>
+<Type>string</Type>
+<Value>1234567890</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>demo.identity.redirect.error</Name>
+<Type>string</Type>
+<Value>Some Errror</Value></Variable></AssemblyActionSetVar><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_21" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[6].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_21.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c6" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_utility_1.0.0_set-variable_20</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_21</Actions></APIRule><AssemblyActionSetVar name="localtest_sandbox_utility_1.0.0_set-variable_22" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[7].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>demo.identity.redirect.username</Name>
+<Type>string</Type>
+<Value>ozairs</Value></Variable>
+<Variable>
+<Action>set</Action>
+<Name>demo.identity.redirect.confirmation</Name>
+<Type>string</Type>
+<Value>1234567890</Value></Variable></AssemblyActionSetVar><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_23" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[7].execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_23.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c7" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_utility_1.0.0_set-variable_22</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_23</Actions></APIRule><AssemblyActionGatewayScript name="localtest_sandbox_utility_1.0.0_gatewayscript_24" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[8].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_24.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_utility_1.0.0_switch0_c8" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_utility_1.0.0_gatewayscript_24</Actions></APIRule><AssemblyLogicSwitch name="localtest_sandbox_utility_1.0.0_switch_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>switch</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/basic-auth/{username}/{password}'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c0</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/ping'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c1</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/validate'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c2</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/generate'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c3</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'POST' and $operationPath() = '/introspect/google'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c4</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'POST' and $operationPath() = '/introspect/auth0'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c5</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/redirect'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c6</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/redirect/authenticate'))</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c7</Execute></Case>
+<Case>
+<Condition>($httpVerb() = 'GET' and $operationPath() = '/scope-check')</Condition>
+<Execute>localtest_sandbox_utility_1.0.0_switch0_c8</Execute></Case></AssemblyLogicSwitch><APIRule name="localtest_sandbox_utility_1.0.0_main" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyLogicSwitch">localtest_sandbox_utility_1.0.0_switch_0</Actions></APIRule><Assembly name="localtest_sandbox_utility_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Rule class="APIRule">localtest_sandbox_utility_1.0.0_main</Rule></Assembly><APISchema name="localtest_sandbox_utility_1.0.0_Scope-check_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1scope-check/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_Scope-check_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_Scope-check_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Scope-check" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/scope-check</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Scope-check_GET</Operation></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_RedirectAuthenticate_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1redirect~1authenticate/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_RedirectAuthenticate_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_RedirectAuthenticate_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_RedirectAuthenticate" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/redirect/authenticate</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_RedirectAuthenticate_GET</Operation></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_Redirect_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1redirect/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_Redirect_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_Redirect_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Redirect" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/redirect</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Redirect_GET</Operation>
+<Parameter>
+<Name>password</Name>
+<Required>on</Required>
+<Type>string</Type>
+<Where>path</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>username</Name>
+<Required>on</Required>
+<Type>string</Type>
+<Where>path</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>Authorization</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>header</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_IntrospectGoogle_POST_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1introspect~1google/post/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_IntrospectGoogle_POST" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>POST</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_IntrospectGoogle_POST_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_IntrospectGoogle" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/introspect/google</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_IntrospectGoogle_POST</Operation></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_IntrospectAuth0_POST_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1introspect~1auth0/post/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_IntrospectAuth0_POST" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>POST</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_IntrospectAuth0_POST_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_IntrospectAuth0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/introspect/auth0</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_IntrospectAuth0_POST</Operation></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_Generate_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1generate/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_Generate_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_Generate_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Generate" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/generate</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Generate_GET</Operation></APIPath><APISchema name="localtest_sandbox_utility_1.0.0_Validate_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_utility_1.0.0.json#/paths/~1validate/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_utility_1.0.0_Validate_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_utility_1.0.0_Validate_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Validate" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/validate</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Validate_GET</Operation></APIPath><APIOperation name="localtest_sandbox_utility_1.0.0_Ping_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Ping" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/ping</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Ping_GET</Operation></APIPath><APIOperation name="localtest_sandbox_utility_1.0.0_Basic-authParamUsernameParamPassword_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema/></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_utility_1.0.0_Basic-authParamUsernameParamPassword" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/basic-auth/{username}/{password}</Path>
+<Operation class="APIOperation">localtest_sandbox_utility_1.0.0_Basic-authParamUsernameParamPassword_GET</Operation>
+<Parameter>
+<Name>password</Name>
+<Required>on</Required>
+<Type>string</Type>
+<Where>path</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>username</Name>
+<Required>on</Required>
+<Type>string</Type>
+<Where>path</Where>
+<SchemaOrFormat/></Parameter>
+<Parameter>
+<Name>Authorization</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>header</Where>
+<SchemaOrFormat/></Parameter></APIPath><APIDefinition name="localtest_sandbox_utility_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<ID>d1e93277-1dfc-49ce-a7ab-16e0bed03cb5</ID>
+<Name>utility</Name>
+<Version>1.0.0</Version>
+<BasePath>/utility</BasePath>
+<Type>standard</Type>
+<Assembly class="Assembly">localtest_sandbox_utility_1.0.0</Assembly>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Scope-check</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_RedirectAuthenticate</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Redirect</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_IntrospectGoogle</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_IntrospectAuth0</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Generate</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Validate</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Ping</Path>
+<Path class="APIPath">localtest_sandbox_utility_1.0.0_Basic-authParamUsernameParamPassword</Path>
+<SwaggerLocation>temporary:///swagger/localtest_sandbox_utility_1.0.0.json</SwaggerLocation>
+<RequireAPIMutualTLS>off</RequireAPIMutualTLS>
+<APIMutualTLSSource>header</APIMutualTLSSource>
+<Properties>
+<PropertyName>sign-jwk</PropertyName>
+<Catalog>*</Catalog>
+<Value>{   "kty": "oct",   "use": "sig",   "kid": "ozairs",   "k": "IRX6xLvAcGlPHnPqFWR_RXPJkSgYbCBTC7tE_k61WbYy6mpYtMAG0BGBtfLOcoT2U8n1X2EFl0ykV_bWg-V6YRJM1I3Mw_KtdwnNSXONC-d9JochuMQCGvv6QyjP77qdDeNtHLrrs9lBP4jXO5C22AGPgvtH3dD2mpmE7jlRocd1A8-eguKWdH5p0b8t80vFhbxCK9sY5fDTwOeJ5wH38F_lFrsLFfXqMkYD_HhMPUJOz1sP0HxqQCj1HM24EY-cHwsLg_3hnweE8wVsSTZZOMxqqGFFdjbXGiXm1OllSIJz9ptd90dws176jP7BkaxB5nG0QdsHH9btUTGjZmD_gg",   "alg": "HS256" }</Value></Properties>
+<Properties>
+<PropertyName>aud-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>client-id-12345</Value></Properties>
+<Properties>
+<PropertyName>iss-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>ozairs4@example.com</Value></Properties>
+<Properties>
+<PropertyName>sub-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>ozairs@example.com</Value></Properties>
+<Properties>
+<PropertyName>sign-jwk-rs256</PropertyName>
+<Catalog>*</Catalog>
+<Value>{     "p": "8qKYF9FqYrrAIsCm5kiy2UiGFfhjghYquB-xdHLYz6wXHdCPgIPH9EtynNIchidPRClw5g_NPXu2X6z3ol35c--YEy6wQBRnsYQAvPIQRGVxvXRsVaZhg-geE_msIQ22h5JXQbMS9NDFcZBZYLu5hgAvn1Qu8CV6exeeGohNAWU",     "kty": "RSA",     "q": "6QH20yqJZeNg1mHNz0tifOyEIYvQrnZh5RHhgo7rXOa6nYfUBRYzQ-a3TtDVqYMudo4DITb0t4EX6CynpXYwtXJTwlumoqPD1Osu4_lsBwlhMH7fhiZg63wxQ4dNPrIblrVi5rXPCJkRtIda2Y-9r4pIQm2JyaXcWXxM2feBINc",     "d": "2RRC9mZZQRBaVyiuV37Ls14_lOxbRuejBp3WtxWFxNl3EpDV-dHRVeVPZ7E0UgjjhrtgokWbUKPoNie3sUL0X3_Ddf-8fQ2pEN8xRPlovG2grTO2dP4vNPxBJGSFxhA-p4rkhuhQbqRJDSH-EuC1Yb6uvEGzu8bvezvCkr_uYMmst2y2qEwTZzgUbM4iK2JUuuy-SbJ3tKw9DAFRmSSLeI9ihd_ieACozjv4mucPaSr6FvJaGGxEpUQnZV8FICRLLAufpNXUrC5q3bGDXklUapQzglTAF0dBLz4JT6SaWlXVXrwQ9HfoQaxuW3epawNxmSjWQvpTJCmuPr27Q2-tYQ",     "e": "AQAB",     "use": "sig",     "kid": "ibm-apiconnect",     "qi": "fZcdGnJacUC0QFGcngRD_TQKLVgeB9nDMsOAvCvJCZVBNdD3m7ra4Kb1AOrdhvsCHh0VQMZfc-nLyhhz2JF1-p2w8qbTKoQ3S3DLE2VyoyBfEysNBd_KvnWYoQG8xo8OEHiJqCekQQkph6Fkkmev6KuZdxRJUOFjJ5YSbj-jkcY",     "dp": "ZbRwCnPWo0Hire6RRzAr_9ZdljIDDBFcoMdwK_7EEPDy06WLsXQLycQia8fK-xTZLhos39K51k7YGGy5dI7ttII2_btxV7r16DwLzyesV-8p6R83FgPjFlai3P6n_0bvPw7BkqGMjaBBUyQNwvWNg7TqQWAZOMKM_7HbrQV7Od0",     "alg": "RS256",     "dq": "BmvFb4BGlQY1DvNXBpVfO24RHhOKRqSAgh2CB2UE22SIU_sAPruj4gUjnAppOOiiiSXUtD-dcskd7Yn9fLPLF9T0tfBsoSK-LMnmWuXusiryALIeWsYH-bVMbj32RPoHhJmvBgiQkf4V3NG2ETTC12mKIDqAh4wIjHa-b2tApbU",     "n": "3NfZAKgsyq0mOiiOTIKs27fIH5Wgetp6W6hvm3XzCd5AzoxUShrYLh-3kT3FS1GNEpwHjpfbl4fM2xsX9WyKz5UQyvgDrM9-qrh-a0ZUTVeGqeD0UcktNDsoAxMRSfRqNtCBBDtJzKz5wjWtM-0mFHU_nD2MTRrME9GjtCfe8JrDuWMmQ2HoY-7B3mqovaL70Dw-0n48wOS_HbKu4c8AY01xvMOAWv_I5-b2lYtuBpGEO921AuiKQQyUF4OBPZs9pp4aXtrLQ-_pm6HDijTq-j9Yqw0s9pw5RuZaXyfcZidp0Zid4YS_qjyQOkj_utWRf_R8X5FslTvJFj8VP73L0w" }</Value></Properties>
+<Properties>
+<PropertyName>verify-jwk-256</PropertyName>
+<Catalog>*</Catalog>
+<Value>{     "kty": "RSA",     "e": "AQAB",     "use": "sig",     "kid": "ibm-apiconnect",     "alg": "RS256",     "n": "3NfZAKgsyq0mOiiOTIKs27fIH5Wgetp6W6hvm3XzCd5AzoxUShrYLh-3kT3FS1GNEpwHjpfbl4fM2xsX9WyKz5UQyvgDrM9-qrh-a0ZUTVeGqeD0UcktNDsoAxMRSfRqNtCBBDtJzKz5wjWtM-0mFHU_nD2MTRrME9GjtCfe8JrDuWMmQ2HoY-7B3mqovaL70Dw-0n48wOS_HbKu4c8AY01xvMOAWv_I5-b2lYtuBpGEO921AuiKQQyUF4OBPZs9pp4aXtrLQ-_pm6HDijTq-j9Yqw0s9pw5RuZaXyfcZidp0Zid4YS_qjyQOkj_utWRf_R8X5FslTvJFj8VP73L0w" }</Value></Properties>
+<CORSToggle>on</CORSToggle>
+<ActivityLogToggle>on</ActivityLogToggle>
+<Content>activity</Content>
+<ErrorContent>header</ErrorContent>
+<MessageBuffering>off</MessageBuffering>
+<DeploymentState>running</DeploymentState>
+<ShareRateLimitCount>unset</ShareRateLimitCount></APIDefinition><APIPlan name="localtest_sandbox_utility-auto-product_1.0.0_default" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Name>default</Name>
+<ProductID>23dc713a-4b0c-4a7f-a6a4-bcb303b8b603</ProductID>
+<ProductName>utility-auto-product</ProductName>
+<ProductVersion>1.0.0</ProductVersion>
+<ProductTitle>utility auto product</ProductTitle>
+<RateLimit>
+<Name>rate-limit</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></RateLimit>
+<API class="APIDefinition">localtest_sandbox_utility_1.0.0</API>
+<RateLimitScope>per-application</RateLimitScope></APIPlan><AssemblyActionSetVar name="localtest_sandbox_weather_1.0.0_set-variable_1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>target-url</Name>
+<Type>string</Type>
+<Value>https://myweatherprovider.mybluemix.net/current?zipcode=$(request.parameters.zipcode)</Value></Variable></AssemblyActionSetVar><APIRule name="localtest_sandbox_weather_1.0.0_switch0_c0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_weather_1.0.0_set-variable_1</Actions></APIRule><AssemblyActionSetVar name="localtest_sandbox_weather_1.0.0_set-variable_2" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0].switch.case[1].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>target-url</Name>
+<Type>string</Type>
+<Value>https://myweatherprovider.mybluemix.net/today?zipcode=$(request.parameters.zipcode)</Value></Variable></AssemblyActionSetVar><APIRule name="localtest_sandbox_weather_1.0.0_switch0_c1" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_weather_1.0.0_set-variable_2</Actions></APIRule><AssemblyLogicSwitch name="localtest_sandbox_weather_1.0.0_switch_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>switch</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/current'))</Condition>
+<Execute>localtest_sandbox_weather_1.0.0_switch0_c0</Execute></Case>
+<Case>
+<Condition>(($httpVerb() = 'GET' and $operationPath() = '/today'))</Condition>
+<Execute>localtest_sandbox_weather_1.0.0_switch0_c1</Execute></Case></AssemblyLogicSwitch><ControlList name="localtest_sandbox_weather_1.0.0_invoke_3_header-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>blacklist</Type>
+<CaseInsensitive>on</CaseInsensitive></ControlList><ControlList name="localtest_sandbox_weather_1.0.0_invoke_3_parameter-control" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>whitelist</Type>
+<CaseInsensitive>off</CaseInsensitive></ControlList><AssemblyActionInvoke name="localtest_sandbox_weather_1.0.0_invoke_3" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>invoke</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[1]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Url>$(target-url)</Url>
+<Timeout>60</Timeout>
+<Method>Keep</Method>
+<Compression>off</Compression>
+<CacheType>Protocol</CacheType>
+<TimeToLive>900</TimeToLive>
+<CacheUnsafeResponse>off</CacheUnsafeResponse>
+<FollowRedirects>off</FollowRedirects>
+<StopOnError>on</StopOnError>
+<ErrorTypes>
+<ConnectionError>on</ConnectionError>
+<SOAPError>off</SOAPError>
+<OperationError>off</OperationError></ErrorTypes>
+<Output>message</Output>
+<DecodeRequestParams>off</DecodeRequestParams>
+<EncodePlusChar>off</EncodePlusChar>
+<KeepPayload>off</KeepPayload>
+<InjectUserAgentHeader>on</InjectUserAgentHeader>
+<InjectProxyHeaders>off</InjectProxyHeaders>
+<HeaderControlList class="ControlList">localtest_sandbox_weather_1.0.0_invoke_3_header-control</HeaderControlList>
+<ParameterControlList class="ControlList">localtest_sandbox_weather_1.0.0_invoke_3_parameter-control</ParameterControlList></AssemblyActionInvoke><AssemblyActionGatewayScript name="localtest_sandbox_weather_1.0.0_gatewayscript_4" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>gatewayscript</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.execute[2]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Source>temporary:///js/localtest_sandbox_weather_1.0.0_gatewayscript_4.js</Source></AssemblyActionGatewayScript><APIRule name="localtest_sandbox_weather_1.0.0_main" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyLogicSwitch">localtest_sandbox_weather_1.0.0_switch_0</Actions>
+<Actions class="AssemblyActionInvoke">localtest_sandbox_weather_1.0.0_invoke_3</Actions>
+<Actions class="AssemblyActionGatewayScript">localtest_sandbox_weather_1.0.0_gatewayscript_4</Actions></APIRule><AssemblyActionSetVar name="localtest_sandbox_weather_1.0.0_set-variable_5" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Title>set-variable</Title>
+<CorrelationPath>$.x-ibm-configuration.assembly.catch[0].execute[0]</CorrelationPath>
+<ActionDebug persisted="false">off</ActionDebug>
+<Variable>
+<Action>set</Action>
+<Name>message.body</Name>
+<Type>string</Type>
+<Value>{"message": "Error occurred during search operation."}</Value></Variable></AssemblyActionSetVar><APIRule name="localtest_sandbox_weather_1.0.0_catch0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="AssemblyActionSetVar">localtest_sandbox_weather_1.0.0_set-variable_5</Actions></APIRule><Assembly name="localtest_sandbox_weather_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Rule class="APIRule">localtest_sandbox_weather_1.0.0_main</Rule>
+<Catch>
+<Error>ConnectionError</Error>
+<Handler class="APIRule">localtest_sandbox_weather_1.0.0_catch0</Handler></Catch>
+<Catch>
+<Error>RuntimeError</Error>
+<Handler class="APIRule">localtest_sandbox_weather_1.0.0_catch0</Handler></Catch></Assembly><APISchema name="localtest_sandbox_weather_1.0.0_Today_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_weather_1.0.0.json#/paths/~1today/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_weather_1.0.0_Today_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_weather_1.0.0_Today_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_weather_1.0.0_Today" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/today</Path>
+<Operation class="APIOperation">localtest_sandbox_weather_1.0.0_Today_GET</Operation>
+<Parameter>
+<Name>zipcode</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISchema name="localtest_sandbox_weather_1.0.0_Current_GET_response_200" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<JSONSchema>temporary:///swagger/localtest_sandbox_weather_1.0.0.json#/paths/~1current/get/responses/200/schema</JSONSchema></APISchema><APIOperation name="localtest_sandbox_weather_1.0.0_Current_GET" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Method>GET</Method>
+<RemoveConsume>off</RemoveConsume>
+<ResponseSchema>
+<StatusCode>200</StatusCode>
+<ResponseSchema class="APISchema">localtest_sandbox_weather_1.0.0_Current_GET_response_200</ResponseSchema></ResponseSchema>
+<RemoveSecurity>off</RemoveSecurity></APIOperation><APIPath name="localtest_sandbox_weather_1.0.0_Current" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Path>/current</Path>
+<Operation class="APIOperation">localtest_sandbox_weather_1.0.0_Current_GET</Operation>
+<Parameter>
+<Name>zipcode</Name>
+<Required>off</Required>
+<Type>string</Type>
+<Where>query</Where>
+<SchemaOrFormat/></Parameter></APIPath><APISecurityAPIKey name="localtest_sandbox_weather_1.0.0_clientID" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Where>header</Where>
+<Type>id</Type>
+<KeyName>X-IBM-Client-Id</KeyName></APISecurityAPIKey><APISecurityOAuth name="localtest_sandbox_weather_1.0.0_oauth2-server" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<OAuthProvider class="OAuthProviderSettings">localtest_sandbox_oauth2-server</OAuthProvider>
+<OAuthFlow>accessCode</OAuthFlow>
+<OAuthScope>openid weather</OAuthScope></APISecurityOAuth><APISecurityOAuthReq name="localtest_sandbox_weather_1.0.0_oauth2-server_req_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<APISecurityOAuthDef class="APISecurityOAuth">localtest_sandbox_weather_1.0.0_oauth2-server</APISecurityOAuthDef>
+<OAuthAllowedScope>weather</OAuthAllowedScope></APISecurityOAuthReq><APISecurityRequirement name="localtest_sandbox_weather_1.0.0_secr_0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Security class="APISecurityAPIKey">localtest_sandbox_weather_1.0.0_clientID</Security>
+<Security class="APISecurityOAuthReq">localtest_sandbox_weather_1.0.0_oauth2-server_req_0</Security></APISecurityRequirement><APIDefinition name="localtest_sandbox_weather_1.0.0" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<ID>a33642f7-e2f3-4e8c-9910-df18e4825091</ID>
+<Name>weather</Name>
+<Version>1.0.0</Version>
+<BasePath>/weather</BasePath>
+<Type>standard</Type>
+<Assembly class="Assembly">localtest_sandbox_weather_1.0.0</Assembly>
+<Path class="APIPath">localtest_sandbox_weather_1.0.0_Today</Path>
+<Path class="APIPath">localtest_sandbox_weather_1.0.0_Current</Path>
+<SwaggerLocation>temporary:///swagger/localtest_sandbox_weather_1.0.0.json</SwaggerLocation>
+<SecurityRequirement class="APISecurityRequirement">localtest_sandbox_weather_1.0.0_secr_0</SecurityRequirement>
+<RequireAPIMutualTLS>off</RequireAPIMutualTLS>
+<APIMutualTLSSource>header</APIMutualTLSSource>
+<Properties>
+<PropertyName>sign-jwk</PropertyName>
+<Catalog>*</Catalog>
+<Value>{     "kty": "oct",     "use": "sig",     "kid": "ozairs",     "k": "IRX6xLvAcGlPHnPqFWR_RXPJkSgYbCBTC7tE_k61WbYy6mpYtMAG0BGBtfLOcoT2U8n1X2EFl0ykV_bWg-V6YRJM1I3Mw_KtdwnNSXONC-d9JochuMQCGvv6QyjP77qdDeNtHLrrs9lBP4jXO5C22AGPgvtH3dD2mpmE7jlRocd1A8-eguKWdH5p0b8t80vFhbxCK9sY5fDTwOeJ5wH38F_lFrsLFfXqMkYD_HhMPUJOz1sP0HxqQCj1HM24EY-cHwsLg_3hnweE8wVsSTZZOMxqqGFFdjbXGiXm1OllSIJz9ptd90dws176jP7BkaxB5nG0QdsHH9btUTGjZmD_gg",     "alg": "HS256" }</Value></Properties>
+<Properties>
+<PropertyName>iss-claim</PropertyName>
+<Catalog>*</Catalog>
+<Value>ozairs@example.com</Value></Properties>
+<Properties>
+<PropertyName>target-url</PropertyName>
+<Catalog>*</Catalog>
+<Value/></Properties>
+<CORSToggle>on</CORSToggle>
+<ActivityLogToggle>on</ActivityLogToggle>
+<Content>activity</Content>
+<ErrorContent>header</ErrorContent>
+<MessageBuffering>off</MessageBuffering>
+<DeploymentState>running</DeploymentState>
+<ShareRateLimitCount>unset</ShareRateLimitCount></APIDefinition><APIPlan name="localtest_sandbox_weather-auto-product_1.0.0_default" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Name>default</Name>
+<ProductID>75faafff-08f9-443c-bf2f-1a390bb4a967</ProductID>
+<ProductName>weather-auto-product</ProductName>
+<ProductVersion>1.0.0</ProductVersion>
+<ProductTitle>weather auto product</ProductTitle>
+<RateLimit>
+<Name>rate-limit</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></RateLimit>
+<API class="APIDefinition">localtest_sandbox_weather_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0</API>
+<RateLimitScope>per-application</RateLimitScope></APIPlan><APIPlan name="localtest_sandbox_sports-product_1.0.0_premium-plan" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Name>premium-plan</Name>
+<ProductID>f05033f0-c6df-4ef4-b9e6-49e9b66cdb9d</ProductID>
+<ProductName>sports-product</ProductName>
+<ProductVersion>1.0.0</ProductVersion>
+<ProductTitle>sports-product</ProductTitle>
+<RateLimit>
+<Name>default</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></RateLimit>
+<API class="APIDefinition">localtest_sandbox_sports-api_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_utility_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0</API>
+<RateLimitScope>per-application</RateLimitScope></APIPlan><APIPlan name="localtest_sandbox_sports-product_1.0.0_beta-plan" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Name>beta-plan</Name>
+<ProductID>f05033f0-c6df-4ef4-b9e6-49e9b66cdb9d</ProductID>
+<ProductName>sports-product</ProductName>
+<ProductVersion>1.0.0</ProductVersion>
+<ProductTitle>sports-product</ProductTitle>
+<RateLimit>
+<Name>default</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></RateLimit>
+<API class="APIDefinition">localtest_sandbox_sports-api_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_utility_1.0.0</API>
+<API class="APIDefinition">localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0</API>
+<RateLimitScope>per-application</RateLimitScope></APIPlan><APICollection name="localtest_sandbox_collection" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Sandbox>on</Sandbox>
+<OrgID>bf170b21-4c7b-42b8-a7de-cd6cb8d6d1c4</OrgID>
+<OrgName>localtest</OrgName>
+<CatalogID>cbdc17b1-e176-4101-a0bc-627a3588e30f</CatalogID>
+<CatalogName>sandbox</CatalogName>
+<EnableCache>on</EnableCache>
+<CacheCapacity>128</CacheCapacity>
+<RoutingPrefix>
+<Type>uri</Type>
+<Name>/localtest/sandbox</Name></RoutingPrefix>
+<DefaultRateLimit>
+<Name>default</Name>
+<Rate>100</Rate>
+<Interval>1</Interval>
+<Unit>hour</Unit>
+<HardLimit>off</HardLimit>
+<CacheOnly>on</CacheOnly>
+<IsClient>on</IsClient>
+<UseApiName>off</UseApiName>
+<UseAppId>off</UseAppId>
+<UseClientId>off</UseClientId>
+<DynamicValue/></DefaultRateLimit>
+<EnforcePreAssemblyRateLimits>on</EnforcePreAssemblyRateLimits>
+<APIProcessingRule class="APIRule">default-api-rule</APIProcessingRule>
+<APIErrorRule class="APIRule">default-api-error-rule</APIErrorRule>
+<Plan class="APIPlan">localtest_sandbox_sports-api-auto-product_1.0.0_default</Plan>
+<Plan class="APIPlan">localtest_sandbox_utility-auto-product_1.0.0_default</Plan>
+<Plan class="APIPlan">localtest_sandbox_weather-auto-product_1.0.0_default</Plan>
+<Plan class="APIPlan">localtest_sandbox_sports-product_1.0.0_premium-plan</Plan>
+<Plan class="APIPlan">localtest_sandbox_sports-product_1.0.0_beta-plan</Plan>
+<APIConnectGatewayService class="APIConnectGatewayService">default</APIConnectGatewayService>
+<GatewayPeeringManager class="GatewayPeeringManager">default</GatewayPeeringManager>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference></APICollection><APIGateway name="apiconnect" external="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<FrontProtocol class="HTTPSSourceProtocolHandler">apiconnect_https_9443</FrontProtocol>
+<XMLManager class="XMLManager">xmlmgr_apiconnect</XMLManager>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>0</DocCacheSize>
+<APICollection class="APICollection">localtest_sandbox_collection</APICollection>
+<ShareRateLimitCount>yes</ShareRateLimitCount></APIGateway></configuration><files><file name="cert:///tls-server-profile-default_idcred_key.pem" src="cert/tls-server-profile-default_idcred_key.pem" location="cert" key="true"/><file name="cert:///tls-server-profile-default_idcred_cert.pem" src="cert/tls-server-profile-default_idcred_cert.pem" location="cert" key="true"/><file name="cert:///gwd/gwd_key.pem" src="cert/gwd/gwd_key.pem" location="cert" key="true"/><file name="cert:///gwd/gwd_cert.pem" src="cert/gwd/gwd_cert.pem" location="cert" key="true"/><file name="cert:///gwd/gwd_ca.pem" src="cert/gwd/gwd_ca.pem" location="cert" key="true"/><file name="temporary:///js/localtest_sandbox_sports-api_1.0.0_gatewayscript_1.js" src="temporary/js/localtest_sandbox_sports-api_1.0.0_gatewayscript_1.js" location="temporary" hash="fL/ZrJ3uvMa4pxWAhPIpU5+4vFA="/><file name="temporary:///swagger/localtest_sandbox_sports-api_1.0.0.json" src="temporary/swagger/localtest_sandbox_sports-api_1.0.0.json" location="temporary" hash="3wNSmdozx4oqAHYhMu7OgbpDfDk="/><file name="cert:///oauth_256.txt" src="cert/oauth_256.txt" location="cert" key="true"/><file name="temporary:///js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_5.js" src="temporary/js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_5.js" location="temporary" hash="AUwZ4IcraLDewv3oyHGoaGMnk8s="/><file name="temporary:///js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_14.js" src="temporary/js/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0_gatewayscript_14.js" location="temporary" hash="0KTmg0h7oTD4T15AjqUJKqt0qOU="/><file name="temporary:///swagger/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0.json" src="temporary/swagger/localtest_sandbox_oauth2-server00782873-eac6-458e-80e9-e0c58156bbcd_1.0.0.json" location="temporary" hash="IiRIgGo7pGx1lgL6z1tSOgYNZZ4="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_1.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_1.js" location="temporary" hash="luNQZjHNv3t5Jk6BNsiPZLXSv2U="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_3.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_3.js" location="temporary" hash="eURF+b2ygU76sDEYLW0ixFjN/X0="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_4.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_4.js" location="temporary" hash="kWvXWl97S1MIzvIIc6B6SdPReLM="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_6.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_6.js" location="temporary" hash="eURF+b2ygU76sDEYLW0ixFjN/X0="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_7.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_7.js" location="temporary" hash="ztPZCZKj/8bAC6JHQYtfv4dE5zk="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_12.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_12.js" location="temporary" hash="tgy/Xo1mplBNYJZUDYES/A0tnqw="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_14.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_14.js" location="temporary" hash="3e9Bq8AjObihGazdn9Ac7cCC7Fc="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_16.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_16.js" location="temporary" hash="rfF12s3f8Zys72fghx332NsEiLc="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_17.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_17.js" location="temporary" hash="UI5V13fhM1ti66UX18K0cySWt+g="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_19.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_19.js" location="temporary" hash="4RfOCRsN/zyxec5XGR/qt+pB65c="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_21.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_21.js" location="temporary" hash="ZhXraiSKkEyRivXPk8q3C5ccvvU="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_23.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_23.js" location="temporary" hash="rmQcrvPB7bc5iDAeuhkQdrcFFgI="/><file name="temporary:///js/localtest_sandbox_utility_1.0.0_gatewayscript_24.js" src="temporary/js/localtest_sandbox_utility_1.0.0_gatewayscript_24.js" location="temporary" hash="BsLyGIiZsOx5eQnyAWOK2TsKDDg="/><file name="temporary:///swagger/localtest_sandbox_utility_1.0.0.json" src="temporary/swagger/localtest_sandbox_utility_1.0.0.json" location="temporary" hash="jsoCBNgRuckpxXolGH9Akec0oq4="/><file name="temporary:///js/localtest_sandbox_weather_1.0.0_gatewayscript_4.js" src="temporary/js/localtest_sandbox_weather_1.0.0_gatewayscript_4.js" location="temporary" hash="aQLILS+3oUT4dBVnQ8wz4CdlbjY="/><file name="temporary:///swagger/localtest_sandbox_weather_1.0.0.json" src="temporary/swagger/localtest_sandbox_weather_1.0.0.json" location="temporary" hash="qNbzMDcTXVunb/zX8bzA8SwQ48s="/><file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" location="dp-aux" internal="true" hash="JWCmCYFwjG0ku59O8LehfGCkiIM="/><file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" location="dp-aux" internal="true" hash="ZnCYHBrcIPvfLAXYOIKIL0KXIbo="/><file name="webgui:///management.xsl" src="dp-aux/management.xsl" location="dp-aux" internal="true" hash="pi0c46mGrlbqTpsWjG3QUxFOCYU="/><file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" location="dp-aux" internal="true" hash="S8LbpfukTeInHK2d6DnQfdiZmd4="/><file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" location="dp-aux" internal="true" hash="rguYxswTHPd7HQ9v8p9Uspr0CuQ="/><file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" location="dp-aux" internal="true" hash="HrLsg2FhC6fPlGYI25NijeP828E="/></files></datapower-configuration>

@@ -1,0 +1,19 @@
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "Policy"
+metadata:
+  name: "apigateway-no-tls"
+spec:
+   targets:
+   - name: apigateway
+#   peers:
+#   - mtls: {}
+---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: apigateway-tls
+#spec:
+#  host: apigateway.istio-demo.svc.cluster.local
+#  trafficPolicy:
+#    tls:
+#      mode: SIMPLE

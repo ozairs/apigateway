@@ -1,0 +1,81 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: datapower
+  name: apigateway
+  namespace: demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: datapower
+    spec:
+      containers:
+      - image: ibmcom/datapower:latest
+        name: apigateway
+        stdin: true
+        tty: true
+        ports:
+        - containerPort: 9443
+          name: api-gw-svc   
+        - containerPort: 3000
+          name: apic-gw-mgmt
+        - containerPort: 9022
+          name: ssh-port
+        - containerPort: 9090
+          name: webgui-port
+        - containerPort: 5554
+          name: rmi-port
+        env:
+        - name: DATAPOWER_ACCEPT_LICENSE
+          value: "true"
+        - name: DATAPOWER_INTERACTIVE
+          value: "true"
+        - name: DATAPOWER_WORKER_THREADS
+          value: "4"
+        volumeMounts:
+        - mountPath: /drouter/config/apigateway/apigateway.cfg
+          name: datapower-config-volume
+          subPath: apigateway.cfg
+        - mountPath: /drouter/config/auto-startup.cfg
+          name: datapower-config-volume
+          subPath: auto-startup.cfg
+        - mountPath: /drouter/config/auto-user.cfg
+          name: datapower-config-volume
+          subPath: auto-user.cfg
+        - mountPath: /drouter/local/apigateway/swaggar
+          name: datapower-local-swagger-volume
+        - mountPath: /drouter/temporary/apigateway/js
+          name: datapower-local-js-volume
+#        - mountPath: /drouter/local/apigateway/gateway-peering/persistence/apigateway-gateway-peering
+#          name: datapower-local-gateway-peer-volume
+        - mountPath: /drouter/secure/usrcerts/apigateway
+          name: datapower-secret-volume
+#        - mountPath: /drouter/secure/usrcerts/apigateway/gwd/gwd_ca.pem
+#          name: datapower-secret-volume
+#          subPath: gwd_ca.pem
+#        - mountPath: /drouter/secure/usrcerts/apigateway/gwd/gwd_cert.pem
+#          name: datapower-secret-volume
+#          subPath: gwd_cert.pem
+#        - mountPath: /drouter/secure/usrcerts/apigateway/gwd/gwd_key.pem
+#          name: datapower-secret-volume
+#          subPath: gwd_key.pem
+      volumes:
+      - name: datapower-config-volume
+        configMap:
+          name: datapower-config
+      - name: datapower-local-swagger-volume
+        configMap:
+          name: datapower-local-swagger
+      - name: datapower-local-js-volume
+        configMap:
+          name: datapower-local-js
+#      - name: datapower-local-gateway-peer-volume
+#        configMap:
+#          name: datapower-local-gateway-peer
+      - name: datapower-secret-volume
+        secret:
+          secretName: apigateway-secrets
+# kubectl attach apigateway-5b55f7bc88-wcjrb --stdin --tty

@@ -1,0 +1,17 @@
+#jwksUri: "https://raw.githubusercontent.com/istio/istio/master/security/tools/jwt/samples/jwks.json"
+#jwksUri: "http://key.default.svc.cluster.local:3000/keys"
+#jwksUri: "http://key:3000/keys"
+
+# NOTE: MAKE SURE TO INSTALL THE KEY IN THE DEFAULT NAMESPACE AS THE MIXER SHOULD BE ABLE TO ACCESS IT. 
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "Policy"
+metadata:
+  name: "jwt-example"
+spec:
+  targets:
+  - name: bookinfo 
+  origins:
+  - jwt:
+      issuer: "datapower@ibm.com"
+      jwksUri: "http://key.default.svc.cluster.local:3000/keys"
+  principalBinding: USE_ORIGIN

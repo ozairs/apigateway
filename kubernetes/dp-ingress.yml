@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apigateway
+  namespace: demo
+spec:
+  tls:
+    - hosts:
+      - 127.0.0.1.xip.io
+  rules:
+    - host:  127.0.0.1.xip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: apigateway
+              servicePort: 9443
+    

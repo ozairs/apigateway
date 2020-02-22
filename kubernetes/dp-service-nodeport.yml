@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigateway-mgmt
+  namespace: demo
+  labels:
+    app: datapower
+spec:
+  ports:
+  - port: 9443
+    nodePort: 30043  
+    name: gateway
+    protocol: TCP
+  - port: 9090
+    nodePort: 30090  
+    name: web-gui
+    protocol: TCP
+  - port: 5554
+    nodePort: 30054
+    name: rmi
+    protocol: TCP
+  - port: 5550
+    nodePort: 30050
+    name: soma
+    protocol: TCP
+  selector:
+    app: datapower
+  type: NodePort

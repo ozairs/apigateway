@@ -1,0 +1,15 @@
+apiVersion: "networking.istio.io/v1alpha3"
+kind: "DestinationRule"
+metadata:
+  name: apigateway
+  namespace: demo
+spec:
+  host: "apigateway.demo.svc.cluster.local"
+  trafficPolicy:
+    portLevelSettings:
+    - port:
+        number: 9443
+      tls:
+        mode: SIMPLE # initiates HTTPS
+    #tls:
+    #  mode: ISTIO_MUTUAL

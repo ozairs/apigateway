@@ -1,0 +1,34 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: fancave-plan
+spec:
+  hosts:
+  - fancave-teams.demo.svc.cluster.local
+  http:
+  - match:
+    - headers:
+        plan:
+          exact: beta-plan
+    route:
+    - destination:
+        host: fancave-teams.demo.svc.cluster.local
+        subset: BetaVersion
+  - route:
+    - destination:
+        host: fancave-teams.demo.svc.cluster.local
+        subset: StableVersion
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: fancave
+spec:
+  host: fancave-teams.demo.svc.cluster.local
+  subsets:
+  - name: StableVersion
+    labels:
+      version: v1
+  - name: BetaVersion
+    labels:
+      version: beta

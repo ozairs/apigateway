@@ -1,0 +1,57 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: ingress-gateway
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      #mode: PASSTHROUGH
+      serverCertificate: "/etc/istio/ingressgateway-certs/tls.crt"
+      privateKey: "/etc/istio/ingressgateway-certs/tls.key"
+    hosts:
+    - "127.0.0.1.xip.io"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: apigateway
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - ingress-gateway
+  http:
+  - match:
+      - uri:
+          prefix: /localtest/
+    route:
+    - destination:
+        host: apigateway.demo.svc.cluster.local
+        port:
+          number: 9443
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: fancave-teams
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - ingress-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /api/team/
+    route:
+    - destination:
+        host: fancave-teams.demo.svc.cluster.local
+        port:
+          number: 3080
