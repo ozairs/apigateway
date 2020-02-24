@@ -1,4 +1,4 @@
-# Secure and Control Microservices using the DataPower API Gateway
+# Secure and Control Microservices using DataPower API Gateway
 
 In this repository, you will find tutorials with guided examples on how to deploy a DataPower API Gateway service using API Connect Local Test Environment (LTE). The following tutorials are available:
 
