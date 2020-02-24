@@ -4,32 +4,35 @@
 
 * [Docker Desktop](https://www.docker.com/products/docker-desktop)
 * [API Connect Local Test Environment (LTE)](https://www.ibm.com/support/knowledgecenter/SSMNED_2018/com.ibm.apic.toolkit.doc/rapic_lte_api_test.html)
-* Clone the GitHub repository at [here](https://github.com/ozairs/datapower-container.git) or [Download the respository zip file](https://github.com/ozairs/datapower-container/archive/master.zip). 
+* Clone the GitHub repository at [here](https://github.com/ozairs/apigateway.git) or [Download the respository zip file](https://github.com/ozairs/apigateway/archive/master.zip). 
 * Following tools: [curl](https://curl.haxx.se) and [jq](https://stedolan.github.io/jq/)
 
 ## High-level Architecture and Process
 
-The DataPower API Gateway service is a modern, highly performant, OpenAPI-driven API gateway runtime. It is a component within API Connect lifecycle management solution. It provides a comprehensive API platform that allows you to create, secure, manage and socialize APIs.
+The DataPower API Gateway service is a modern, highly performant, OpenAPI-driven API gateway runtime. It is a component within API Connect lifecycle management solution, which provides a comprehensive API platform that allows you to create, secure, manage and socialize APIs.
 
-For use cases where you simply need to secure, rate-limit and control access to APIs with an API key, it can simply be done using the API Gateway runtime. The process for creating the API Gateway configuration is done using the user interface for the API Gateway service, which is the API manager / API designer. When you publish APIs from the API designer, it converts API definitions into DataPower configuration. In general, when you need to continously publish APIs, you will need to use the API manager. For scenarios, where you simply want to deploy pre-defined set of APIs, you can export the configuration from the DataPower Gateway without the API Manager. Furthermore, API subscriptions (ie client id) are not included within DataPower configuration because they are stored within a distributed cache. If you need to support real-time subscriptions, then its likely your using a developer portal and this approach would not satisfy this requirement. In this use case, the assumption is that API subscriptions are known and shared with API consumers out-of-band.
+For use cases where you simply need to secure, rate-limit and control access to APIs (ie via API keys), it can simply be done using the API Gateway runtime. The process for creating the API Gateway configuration is done using the user interface for the API Gateway service, which is the API manager / API designer. When you publish APIs from the API designer, it converts API definitions into DataPower configuration. 
+
+In general, you need to use the API manager when you need to continously publish APIs and create Application subscriptions (ie API Key). For scenarios, where you simply want to deploy a pre-defined set of APIs and Application subscriptions, you can export the configuration from the DataPower Gateway without the API Manager. Keep in mind that API subscriptions (ie client id) are not included within DataPower configuration because they are stored within a distributed cache. If you need to support real-time subscriptions, then its likely your using a developer portal and this approach would not satisfy this requirement. In this use case, the assumption is that API subscriptions are known and shared with API consumers out-of-band.
 
 In this tutorial, you will perform the following:
-1. Use the API Designer (in the API Connect LTE) to create API definitions with API assemblies and publish them to the API Gateway.
+1. Use the API Designer (via thee API Connect LTE) to create API definitions with API assemblies and publish them to the API Gateway.
 2. Export DataPower configuration consisting of published API definitions.
 3. Deploy a standalone DataPower configuration and unit-test the exported configuration from the previous step.
+4. Create API Subscriptions with an API key to one or more API products packaged within the configuration.
 
 Just to reinforce the use case, the assumption is that these API definitions are created at **design time** using the API designer, specifically using the API Connect Local Test Environment (LTE). Once the APIs are unit-tested within your development environment, you don't need the LTE, consider it as the **IDE** for your API Gateway enviornment.
 
 ## Step 1. Use the API Designer to create and publish API definitions.
 
-In this section, use the API Connect LTE to create API definitions. The default subscription creates an API product for each API definition. Once your done testing, you should create an API product and reference the appropriate APIs that you will use as part of your deployment.
+In this section, use the API Connect LTE to create API definitions. The default subscription creates an API product for each API definition. Once your done testing, you should create an API product and reference the API definitions that you will use as part of your deployment.
 
 For more details on using the API Connect LTE, several blogs are available here:
 - [How to install Local Test Environment (LTE)](https://developer.ibm.com/apiconnect/2019/08/23/intall-local-test/)
 - [Securing APIs using OAuth with Local Test Environment (LTE) and API Designer](https://developer.ibm.com/apiconnect/2019/09/04/securing-apis-using-oauth-with-lte-designer/)
 - [Creating TLS Client Profile on Local Test Environment (LTE)](https://developer.ibm.com/apiconnect/2020/01/29/tls-client-profile-using-lte/)
 
-1. The existing configuration in the `_deploy` folder contains a set of published API definitions. The APIs are visually shown in the screenshot below:
+1. Make sure you have downloaded the Git repository. The existing configuration in the `_deploy` folder contains a set of published API definitions. The APIs are visually shown in the screenshot below:
     ![alt](./images/api_designer.jpg)
 
 2. The `sports-api-1.0.0` API definition will be used extensively in the tutorials. The screenshot below shows the resources for the API definition:
@@ -38,21 +41,25 @@ For more details on using the API Connect LTE, several blogs are available here:
 3. The screenshot below defines the actions performed as part of the API Assembly:
     ![alt](./images/api_assembly.jpg)
 
-You skip to the next section if your planning to use the existing DataPower configuration, otherwise follow the instructions below to package your own configuration:
+You can skip to the next section if your planning to use the existing DataPower configuration in the `_deploy` folder; otherwise follow the instructions below to package your own configuration:
 
-1. Use the DataPower instance from API Connet LTE environment. Login to the DataPower UI running at `https://127.0.0.1:9091/` with credentials `admin/admin`, and select the `apiconnect` domain. 
+**Note**: These instructions assume you have already setup and deployed APIs using the API Connect LTE environment.
+
+1. Use the DataPower instance from API Connect LTE environment. Login to the DataPower UI running at `https://127.0.0.1:9091/` with credentials `admin/admin`, and select the `apiconnect` domain. 
 2. Export your DataPower configuration using the DataPower UI. In the home page, select **Export Configuration**.
 3. Make sure that **Export configuration and files from the current domain** is selected and click **Next**.
 4. Under **Objects**, select **API Gateway**, and the existing `apiconnect` object. Leave the remaining options at their default values and click the **>** button.
     ![alt](images/export_DP_config.jpg)
 5. Click **Next** and follow the prompts to download and save the file to your workstation.
-6. You will need to manually copy files from your configuration or re-create them with the same name. Since certificates should be unique across each environment, its a best practice to create the files again when deploying into your target environment.
+
+
+**Note**: Certificates are not included in the export package. You will need to manually copy these certificate files from your configuration or re-create them with the same name in your target environment. Since certificates should be unique across each environment, its a best practice to create the files again when deploying into your target environment.
 
 ## Step 2. Package for Deployment on Standalone DataPower
 
 In this section, you will prepare the DataPower configuration for deployment into a standalone DataPower gateway for Docker.
 
-1. Examine the structure of the folder. Note that you will need to include certificates **referenced** from your exported configuration since a DataPower export does not include certificate files.
+1. Examine the structure of the folder. Note that you will need to manually include certificates **referenced** from your exported configuration since a DataPower export does not include certificate files.
     ```
     |-- _deploy
         |-- apigateway
@@ -71,7 +78,7 @@ In this section, you will prepare the DataPower configuration for deployment int
 
     The `scripts` folder contains scripts to run that will package & deploy the DataPower configuration and create/delete subscriptions.
 
-2. You can use the existing API Gateway configuration from the `_deploy` directory or if you created your own configuration, then you can unzip your API Gateway configuration into the `_deploy/apigateway` directory. Manually change parameters within the <domain>.cfg files based on your target envioronment, such as the following:
+2. You can use the existing API Gateway configuration from the `_deploy` directory or if you created your own configuration, then unzip your API Gateway configuration into the `_deploy/apigateway` directory. Manually change parameters within the <domain>.cfg files based on your target envioronment, such as the following:
     - Organization name
     - Catalog Name
     - Routing Prefix 
@@ -104,7 +111,7 @@ In this section, you will prepare the DataPower configuration for deployment int
     Modify Web Management Service configuration
     idg(config web-mgmt)# admin-state enabled
     idg(config web-mgmt)# exit
-    idg(config)# co; rest-mgmt       
+    idg(config)# rest-mgmt       
     Modify REST Management Interface configuration
     idg(config rest-mgmt)# admin-state enabled
     idg(config rest-mgmt)# exit
@@ -153,7 +160,7 @@ In this section, you will prepare the DataPower configuration for deployment int
     >>>>>>>>>> Script actions completed. Check logs for more details. <<<<<<<<<< 
     ```
 
-10. Review the `config.cfg` file, you will notice the client id and secret is pre-defined. The Sports API product is protected using OAuth security so you will first need to obtain an OAuth token and then call the Sports API. 
+10. Review the `config.cfg` file, you will notice the client id and secret are pre-defined. The Sports API product is protected using OAuth security so you will first need to obtain an OAuth token and then call the Sports API. 
     ```
     CONSUMER_APP_ID=101
     CONSUMER_APP_NAME=sandbox-test-app
@@ -193,8 +200,8 @@ In this section, you will prepare the DataPower configuration for deployment int
     docker rm idg
     ```
 
-    Congratulations, you have successfully deployed a standalone DataPower API Gateway service and tested APIs with no security, OAuth security and API subscriptions.
+    Congratulations, you have successfully deployed a standalone DataPower API Gateway service and tested APIs with no security, OAuth security and API subscriptions. The DataPower instance on Docker created three folders that will be used in subsequent tutorials (config, local, temporary)
 
 ## Summary
 
-In this tutorial, You created API Gateway configuration using the API Connect LTE and packaged and deployed it using DataPower on Docker. In the next tutorial, you will use the existing volume mounts from DataPower on Docker deployment to run the container within a Kubernetes environment.
+In this tutorial, You created API Gateway configuration using the API Connect LTE and packaged and deployed it using DataPower on Docker. In the next tutorial, you will use the existing volume mounts from the DataPower on Docker instance to run the container within a Kubernetes environment.
