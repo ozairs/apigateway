@@ -2,13 +2,15 @@
 
 In this tutorial, you will learn how to apply Istio routing rules to dynamically control routing of microservices, either for business reasons or to provide new functionality via A/B testing. 
 
-In this tutorial, you will apply Istio routing rules to perform dynamic routing for two use cases
+You must complete the [previous tutorial](../istio/README-security.md) before you run this tutorial.
+
+In this tutorial, you will apply Istio routing rules to perform dynamic routing for two use cases:
   1. Dynamic routing based on the subscribed API Plan
   2. Perform A/B Testing of Multiple API Microservices (Standard vs Beta)
 
 **Pre-requisites**
 * [Docker Desktop](https://www.docker.com/products/docker-desktop)
-* Clone the GitHub repository at [here](https://github.com/ozairs/datapower-container.git) or [Download the respository zip file](https://github.com/ozairs/datapower-container/archive/master.zip). 
+* Clone the GitHub repository at [here](https://github.com/ozairs/apigateway.git) or [Download the respository zip file](https://github.com/ozairs/apigateway/archive/master.zip). 
 * Following tools: [curl](https://curl.haxx.se), [jq](https://stedolan.github.io/jq/), either [repeat](https://www.google.com/search?q=zsh+repeat) or [watch](https://www.google.com/search?q=install+watch+command). 
 
 1. In the previous tutorial, you deployed multiple instances of the fancave microservice.
@@ -21,13 +23,16 @@ In this tutorial, you will apply Istio routing rules to perform dynamic routing 
     ```
     Notice that there are two deployments, `fancave-teams` and `fancave-teams-beta`. These deployments represent two seperate microservices instances. When you have no routing rules, any of these microservices are invoked. When you configure routing rules, such as routing based on a label (`version: beta`) then Istio can always route to the microservice that contains the same label. In the following steps, you will observe how to influence the service mesh with routing rules based on HTTP header and Kubernetes labels.
 
-2. Deploy a logging policy that will capture key metrics from the fancave-teams microservice. You can watch these logs to observe which microservice is invoked.
+2. Navigate to the `istio` folder. Deploy a logging policy that will capture key metrics from the `fancave-teams` microservice. You can examine these logs to observe which microservice is invoked.
     ```
     kubectl apply -f log-entry.yaml
     ```
 
 3. Run some sample requests again, and examine the log entries
     ```
+    ../scripts/test-api.sh -f $PWD/config.cfg oauth application
+    ../scripts/test-api.sh -f $PWD/config.cfg sports-oauth teams <<< "<access_token>"
+    
     kubectl logs -f -n istio-system -l istio-mixer-type=telemetry -c mixer | grep "accesslog" | grep '"destination":"teams"'
 
     {"level":"warn","time":"2020-02-19T22:29:50.143637Z","instance":"accesslog.instance.istio-system","destination":"teams","destinationVersion":"beta","latency":"3.7895ms","responseCode":200,"responseSize":9195,"source":"istio-ingressgateway","user":"unknown"}
@@ -74,8 +79,11 @@ In this tutorial, you will apply Istio routing rules to perform dynamic routing 
             subset: StableVersion
     ```
 
-5. Run some sample requests again, and examine the log entries. The last few requests should only show entries from the v1 service (ie `StableVersion`). Since the API subscription is using the `premium-plan`, the request is not going to the beta version.
+5. Run some sample requests again, and examine the log entries. The Sports API subscription is using the `premium-plan` so no request is not going to the beta version. The last few requests should only show entries from the v1 service (ie `StableVersion`). 
     ```
+    ../scripts/test-api.sh -f $PWD/config.cfg oauth application
+    ../scripts/test-api.sh -f $PWD/config.cfg sports-oauth teams <<< "<access_token>"
+    
     kubectl logs -f -n istio-system -l istio-mixer-type=telemetry -c mixer | grep "accesslog" | grep '"destination":"teams"'
 
     {"level":"warn","time":"2020-02-21T19:41:56.487327Z","instance":"accesslog.instance.istio-system","destination":"teams","destinationVersion":"v1","latency":"2.3712ms","responseCode":200,"responseSize":9195,"source":"datapower","user":"unknown"}
@@ -99,16 +107,16 @@ In this tutorial, you will apply Istio routing rules to perform dynamic routing 
 8. Run some sample requests again using the `repeat` command, and examine the log entries. You should see a mix of requests for both the Stable and Beta versions.
     ```
     ./test-api.sh -f $PWD/config.cfg oauth application
-    repeat 10 { ./test-api.sh -f $PWD/config.cfg sports-oauth teams <<< <access_token> }
+    repeat 50 { ./test-api.sh -f $PWD/config.cfg sports-oauth teams <<< <access_token> }
     kubectl logs -f -n istio-system -l istio-mixer-type=telemetry -c mixer | grep "accesslog" | grep '"destination":"teams"'
 
     {"level":"warn","time":"2020-02-21T19:41:56.487327Z","instance":"accesslog.instance.istio-system","destination":"teams","destinationVersion":"v1","latency":"2.3712ms","responseCode":200,"responseSize":9195,"source":"datapower","user":"unknown"}
     {"level":"warn","time":"2020-02-21T19:41:56.486623Z","instance":"accesslog.instance.istio-system","destination":"teams","destinationVersion":"v1","latency":"3.3317ms","responseCode":200,"responseSize":9195,"source":"istio-ingressgateway","user":"unknown"}
     ```
 
-Its still unclear if we are getting the 70/30 split from the logs. Istio released a new tool called Kiali that provides visualization of pods deployed within the Istio mesh, including visibility on traffic distribution. In the next step, you will use Kiali to visualize the traffic distribiution.
+Its difficult to calculate if we are getting the 70/30 split from the logs; fortunately, Istio released a new tool called **Kiali** that provides visualization of pods deployed within the Istio mesh, including visibility on traffic distribution. In the next step, you will use **Kiali** to visualize the traffic distribiution.
 
-9. Following the instructions for installing the Kiali dashboard [here](https://istio.io/docs/tasks/observability/kiali/).
+9. Follow the instructions for installing the Kiali dashboard [here](https://istio.io/docs/tasks/observability/kiali/).
 
 10. Login to the Kiali dashboard, it provides visualization of the current deployment. Open a new terminal and run the following command:
     ```
@@ -117,12 +125,12 @@ Its still unclear if we are getting the 70/30 split from the logs. Istio release
 
 11. Login with the username and password that you configured as part of the setup process.
 
-12. Click the Graph link and select the namespace `demo`. Run some traffic so that Kiali can display visualization. After a few seconds, the page will refresh. 
+12. Click the Graph link and select the namespace `demo`. Run some traffic so that Kiali can display the visualization. After a few seconds, the page will refresh. 
     ![alt](./images/Kiali_Console.jpg)
 
-13. You can select various filters to view the traffic. Seleect the **Requests percentage** to display percentage requests on each path.
+13. You can select various filters to view the traffic. Select the **Requests percentage** to display percentage requests on each path.
 
-14. Run some sample requests again using the `repeat` command, and examine the Graph. You should see a mix of requests for both the Stable and Beta versions. 
+14. Run some sample requests again using the `repeat` command, and examine the Graph. You should see a mix of requests for both the Stable and Beta versions. You can modify the `repeat` parameter `10` to make sure that the 70/30 split is occuring.
     ```
     ./test-api.sh -f $PWD/config.cfg oauth application
     repeat 10 { ./test-api.sh -f $PWD/config.cfg sports-oauth teams <<< <access_token> }
@@ -139,14 +147,14 @@ Its still unclear if we are getting the 70/30 split from the logs. Istio release
     ![alt](./images/jaeger_ui.jpg)
 
 
-17. Kill all the background processes with the command `pkill istioctl`
+17. Once your satisfied with examining Kiali and Jaeger, you can kill all the background processes with the command `pkill istioctl`
 
 Congratulations, you have successfully deployed Istio routing rules to control traffic routing from the API Gateway to the fancave-teams microservices, either v1 (Stable) or beta (Beta) versions.
 
 
 ## Summary
 
-In this tutorial, you configured an Istio JWT Security policy to protect access to a microservice with a valid JWT Token. The DataPower API Gateway service is then used to generate a token and invoke the Fancave Teams microservice successfully. 
+In this tutorial, you configured multiple Istio routing rules to control mesh behaviour based on the subscribed API plan or introduce new features via A/B testing. Finally, you used the built Kaili and Jaeger plugins to visualize the serviecs within the Istio service mesh. 
 
 ## Cleanup
 
