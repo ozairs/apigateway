@@ -49,6 +49,7 @@ You can skip to the next section if your planning to use the existing DataPower 
 2. Export your DataPower configuration using the DataPower UI. In the home page, select **Export Configuration**.
 3. Make sure that **Export configuration and files from the current domain** is selected and click **Next**.
 4. Under **Objects**, select **API Gateway**, and the existing `apiconnect` object. Leave the remaining options at their default values and click the **>** button.
+
     ![alt](images/export_DP_config.jpg)
 5. Click **Next** and follow the prompts to download and save the file to your workstation.
 
