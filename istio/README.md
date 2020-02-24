@@ -2,12 +2,12 @@
 
 In this tutorial, you will package and deploy the DataPower API Gateway service into an Istio service mesh. The same configuration used for Kubernetes is used when deploying into Istio with the exception that Istio will deploy a sidecar alongside the DataPower API Gateway service.
 
-You will also deploy a backend service within the service mesh so you can explore
+You will also deploy a backend service within the service mesh so you can control and experiment with Istio policies between multiple pods.
 
 **Pre-requisites**
 
 * [Docker Desktop](https://www.docker.com/products/docker-desktop)
-* Clone the GitHub repository at [here](https://github.com/ozairs/datapower-container.git) or [Download the respository zip file](https://github.com/ozairs/datapower-container/archive/master.zip). 
+* Clone the GitHub repository at [here](https://github.com/ozairs/apigateway.git) or [Download the respository zip file](https://github.com/ozairs/apigateway/archive/master.zip). 
 * Following tools: [curl](https://curl.haxx.se) and [jq](https://stedolan.github.io/jq/)
 
 ## Configure Istio Environment
@@ -21,7 +21,7 @@ In this section, you will configurre the Istio artifacts to deploy the API Gatew
     |-- scripts
     ```
 
-1. Download Istio management components into a folder on your workstation. Make sure you add `istioctl` into your path.
+1. Download the Istio management components into a folder on your workstation. Make sure you add `istioctl` into your path.
     ``` 
     curl -L https://git.io/getLatestIstio | ISTIO_VERSION=$ISTIO_VERSION sh -
     ```
@@ -96,7 +96,7 @@ In this section, you will configurre the Istio artifacts to deploy the API Gatew
     kubectl apply -f ../kubernetes/dp-service-nodeport.yml
     ```
 
-9. Verify that the API Gateway service is successfully deployed. You will notice that in an Istio deployment that there are 2 pods deployed (`2/2`).
+9. Verify that the API Gateway service is successfully deployed. You will notice that an Istio deployment contains 2 containers within each pods.
     ```
     kubectl get pods -n demo
     NAME                          READY   STATUS    RESTARTS   AGE
@@ -121,15 +121,19 @@ In this section, you will configurre the Istio artifacts to deploy the API Gatew
     >>>>>>>>>> Script actions completed. Check logs for more details. <<<<<<<<<< 
     ```
 
-In the next step, you would typically call the API definition with the OAuth token; however, you will tweak the API Gateway configuration to call a locally deployed microservice.
+In the next step, you would typically call the API definition with the OAuth token; however, since we want to experiment with Istio using locally deployed pods, you will tweak the API Gateway configuration to call a locally deployed microservice instead of the externally deployed servicee.
 
-13. The quickest way to modify the DataPower configuration is to modify the ConfigMap and restart the DataPower pod.
+The quickest way to modify the DataPower configuration is to modify the ConfigMap and restart the DataPower pod.
+
+12. Using a text editor, modify the following Invoke policy endpoint to `http://fancave-teams.demo.svc.cluster.local:3080/api/team/list?league={league}`.
+
     ```
     cd ../docker/config/apigateway/
     open apigateway.cfg
     ```
-
-14. Using a text editor, modify the following Invoke policy endpoint to `http://fancave-teams.demo.svc.cluster.local:3080/api/team/list?league={league}`
+    .
+    .
+    .
     ```
     assembly-invoke "localtest_sandbox_sports-api_1.0.0_invoke_6"
     title "invoke"
@@ -137,7 +141,7 @@ In the next step, you would typically call the API definition with the OAuth tok
     url "http://fancave-teams.demo.svc.cluster.local:3080/api/team/list?league={league}"
     ```
 
-15. Re-deploy the config map and restart the DataPower API Gateway service. The API Gateway is ready to call the locally deployed fancave service.
+13. Re-deploy the config map and restart the DataPower API Gateway service. The API Gateway is ready to call the locally deployed fancave service.
     ```
     kubectl delete configmap/datapower-config --namespace demo
     kubectl create configmap datapower-config --from-file=../docker/config --from-file=../docker/config/apigateway -n demo
@@ -146,21 +150,23 @@ In the next step, you would typically call the API definition with the OAuth tok
     ../scripts/create-app-subscription.sh -f $PWD/config.cfg
     ```
 
-16. Deploy the fancave microservice. Navigate to the `istio` directory and run the following commands:
+Now, we need to deploy the backend microservice.
+
+14. Deploy the fancave microservice. Navigate to the `istio` directory and run the following commands:
     ```
     kubectl apply -f ./fancave -n demo
     ```
 
-17. Validate that the fancave microservices are deployed successfully. You will notice two pods are deployed, you can assume that for now any of those pods are called and provide the same response.
+15. Validate that the fancave microservices are deployed successfully. You will notice two pods are deployed, you can assume that both of these pods provide the same response.
 
-18. The Istio Ingress contains a rule for calling the Fancave teams service directly. You will lock down direct access in a later step but lets make sure we can access the service directly (note: we are using curl to call directly).
+16. The Istio Ingress contains a rule for calling the Fancave teams service directly. You will lock down direct access in a later step but lets make sure we can access the service directly (note: we are using curl to call directly).
     ```
     curl -k https://127.0.0.1.xip.io/api/team/list?league=nba | jq '.'
     ```
 
 You will call the same sports API using the API Gateway. Since the Sports API is protected using OAuth on the API Gateway, you will need an access token before invoking it. Obviously, we need to lock the backend down, which will be done in a later step.
 
-19. Obtain an OAuth access token and then call the Sports API with that token. The `test-api.sh` script includes the API parameters needed to call the Sports API with OAuth security.
+17. Obtain an OAuth access token and then call the Sports API with that token. The `test-api.sh` script includes the API parameters needed to call the Sports API with OAuth security (make sure your in the `istio` folder.
     ```
     ../scripts/test-api.sh -f $PWD/config.cfg oauth application
     
@@ -186,4 +192,6 @@ Congratulations, you have successfully deployed the DataPower API Gateway servic
 
 ## Summary
 
-In this tutorial, You packaged and deployed the API Gateway configuration into the Istio service mesh. In the next tutorial, you will demonsrate how to apply Istio policies to provide enhanced security and platform resiliency. The key value proposition of Istio is that you can enforce policies without modifying any code / configuration within individual pods.
+In this tutorial, You packaged and deployed the API Gateway configuration into the Istio service mesh. In the next tutorial, you will demonsrate how to apply Istio policies to provide enhanced security and platform resiliency. The key value proposition of Istio is that you can enforce policies without modifying any code / configuration within individual pods. You will learn how it can be done.
+
+Next: [Use Istio JWT Security to Protect Microservices using DataPower API Gateway Service](../istio/README-security.md)
